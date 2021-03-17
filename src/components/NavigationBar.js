@@ -20,6 +20,9 @@ const useStyles = makeStyles({
   fSize: {
     fontSize: 12,
   },
+  whiteCol: {
+    color: '#fff',
+  },
 });
 
 const NavigationBar = () => {
@@ -30,28 +33,28 @@ const NavigationBar = () => {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar disableGutters>
           <Grid container justify="space-between">
-            <IconButton color="inherit">
+            <IconButton className={classes.whiteCol}>
               <Grid container direction="column" alignItems="center">
                 <InsertChart />
-                <Typography component="p" className={classes.fSize} variant="subtitle2" color="inherit">Add Measure</Typography>
+                <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">Add Measure</Typography>
               </Grid>
             </IconButton>
-            <IconButton color="inherit">
+            <IconButton className={classes.whiteCol}>
               <Grid container direction="column" alignItems="center">
                 <TrendingUp />
-                <Typography component="p" className={classes.fSize} variant="subtitle2" color="inherit">Track It</Typography>
+                <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">Track It</Typography>
               </Grid>
             </IconButton>
-            <IconButton color="inherit">
+            <IconButton className={classes.whiteCol}>
               <Grid container direction="column" alignItems="center">
                 <PieChart />
-                <Typography component="p" className={classes.fSize} variant="subtitle2" color="inherit">Progress</Typography>
+                <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">Progress</Typography>
               </Grid>
             </IconButton>
-            <IconButton color="inherit">
+            <IconButton className={classes.whiteCol}>
               <Grid container direction="column" alignItems="center">
                 <MoreHoriz />
-                <Typography component="p" className={classes.fSize} variant="subtitle2" color="inherit">More</Typography>
+                <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">More</Typography>
               </Grid>
             </IconButton>
           </Grid>
