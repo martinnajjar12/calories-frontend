@@ -10,8 +10,9 @@ const useStyles = makeStyles({
   root: {
     justifyContent: 'center',
   },
-  boldFont: {
+  fontStyles: {
     fontWeight: 'bold',
+    fontSize: '1.5em',
   },
 });
 
@@ -20,7 +21,7 @@ const Header = () => {
   return (
     <AppBar color="primary">
       <Toolbar className={classes.root}>
-        <Typography className={classes.boldFont} component="h1" color="textPrimary" align="center">From Props</Typography>
+        <Typography className={classes.fontStyles} component="h1" color="textPrimary" align="center">From Props</Typography>
       </Toolbar>
     </AppBar>
   );

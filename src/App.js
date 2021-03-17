@@ -11,6 +11,20 @@ const theme = createMuiTheme({
       primary: '#fff',
     },
   },
+  typography: {
+    fontFamily: [
+      '"Helvetica Neue"',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
 });
 
 const App = () => (
