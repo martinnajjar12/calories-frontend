@@ -5,6 +5,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   root: {
@@ -16,15 +17,19 @@ const useStyles = makeStyles({
   },
 });
 
-const Header = () => {
+const Header = ({ title }) => {
   const classes = useStyles();
   return (
-    <AppBar color="primary">
+    <AppBar color="primary" position="sticky">
       <Toolbar className={classes.root}>
-        <Typography className={classes.fontStyles} component="h1" color="textPrimary" align="center">From Props</Typography>
+        <Typography className={classes.fontStyles} component="h1" color="textPrimary" align="center">{title}</Typography>
       </Toolbar>
     </AppBar>
   );
+};
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Header;

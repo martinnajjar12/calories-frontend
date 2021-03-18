@@ -1,7 +1,9 @@
 import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 import Header from './components/Header';
+import LoginPage from './components/LoginPage';
 import NavigationBar from './components/NavigationBar';
 
+const loggedIn = false;
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -27,12 +29,23 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Header />
-    <NavigationBar />
-  </ThemeProvider>
-);
+const App = () => {
+  if (loggedIn) {
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Header title="name" />
+        <NavigationBar />
+      </ThemeProvider>
+    );
+  }
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Header title="Calories Tracker" />
+      <LoginPage />
+    </ThemeProvider>
+  );
+};
 
 export default App;
