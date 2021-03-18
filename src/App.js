@@ -1,4 +1,8 @@
-import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
+import {
+  unstable_createMuiStrictModeTheme as createMuiTheme,
+  CssBaseline,
+  ThemeProvider,
+} from '@material-ui/core';
 import Header from './components/Header';
 import LoginPage from './components/LoginPage';
 import NavigationBar from './components/NavigationBar';

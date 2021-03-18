@@ -5,6 +5,10 @@ const commonStyles = makeStyles({
     color: '#000',
     opacity: 0.5,
   },
+  darkText: {
+    color: '#000',
+    opacity: 0.8,
+  },
   lightGreyBg: {
     backgroundColor: '#fafafa',
   },
@@ -17,8 +21,17 @@ const commonStyles = makeStyles({
     alignItems: 'center',
     flexDirection: 'column',
   },
-  topMargin: {
+  topMargin50: {
     marginTop: 50,
+  },
+  bottomMargin50: {
+    marginBottom: 50,
+  },
+  topMargin15: {
+    marginTop: 15,
+  },
+  formControlWidth: {
+    minWidth: 174,
   },
 });
 
