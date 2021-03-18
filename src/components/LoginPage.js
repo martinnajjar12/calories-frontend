@@ -4,7 +4,8 @@ import {
   makeStyles,
 } from '@material-ui/core';
 import React from 'react';
-import MyStepper from './Stepper';
+import FormTitle from './FormTitle';
+import UserForm from './UserForm';
 
 const useStyles = makeStyles({
   root: {
@@ -33,7 +34,8 @@ const LoginPage = () => {
           image="calories.png"
         />
       </Card>
-      <MyStepper />
+      <FormTitle />
+      <UserForm />
     </>
   );
 };

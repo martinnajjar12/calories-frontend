@@ -8,6 +8,18 @@ const commonStyles = makeStyles({
   lightGreyBg: {
     backgroundColor: '#fafafa',
   },
+  centerText: {
+    textAlign: 'center',
+  },
+  centerVertically: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+  },
+  topMargin: {
+    marginTop: 50,
+  },
 });
 
 export default commonStyles;
