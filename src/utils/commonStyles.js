@@ -33,6 +33,9 @@ const commonStyles = makeStyles({
   formControlWidth: {
     minWidth: 174,
   },
+  whiteText: {
+    color: '#fff',
+  },
 });
 
 export default commonStyles;

@@ -3,11 +3,12 @@ import {
   CssBaseline,
   ThemeProvider,
 } from '@material-ui/core';
+import { useState } from 'react';
 import Header from './components/Header';
-import LoginPage from './components/LoginPage';
+// import RegistrationPage from './components/RegistrationPage';
 import NavigationBar from './components/NavigationBar';
+import LoginPage from './components/LoginPage';
 
-const loggedIn = false;
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -34,6 +35,7 @@ const theme = createMuiTheme({
 });
 
 const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
   if (loggedIn) {
     return (
       <ThemeProvider theme={theme}>
@@ -47,7 +49,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header title="Calories Tracker" />
-      <LoginPage />
+      <LoginPage setLoggedIn={setLoggedIn} />
     </ThemeProvider>
   );
 };

@@ -1,43 +1,78 @@
 import {
-  Card,
-  CardMedia,
-  makeStyles,
+  Button,
+  FormControl,
+  Input,
+  InputLabel,
 } from '@material-ui/core';
-import React from 'react';
-import FormTitle from './FormTitle';
-import UserForm from './UserForm';
+import axios from 'axios';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import commonStyles from '../utils/commonStyles';
 
-const useStyles = makeStyles({
-  root: {
-    boxShadow: 'none',
-    marginTop: 40,
-    backgroundColor: '#fafafa',
-  },
-  cardHeight: {
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    height: 0,
-    maxWidth: 300,
-    paddingBottom: 125,
-    margin: '0 auto',
-  },
-});
+const defaultState = {
+  email: '',
+  password: '',
+};
 
-const LoginPage = () => {
-  const classes = useStyles();
+const LoginPage = ({ setLoggedIn }) => {
+  const [state, setState] = useState(defaultState);
+  const commonClasses = commonStyles();
+
+  const handleChange = e => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = info => {
+    axios.post('http://localhost:3000/auth/sign_in', info)
+      .then(res => {
+        setLoggedIn(true);
+        console.log(res.headers);
+      });
+  };
 
   return (
-    <>
-      <Card className={classes.root}>
-        <CardMedia
-          className={classes.cardHeight}
-          image="calories.png"
+    <form className={`${commonClasses.centerVertically} ${commonClasses.topMargin50} ${commonClasses.bottomMargin50}`}>
+      <FormControl className={commonClasses.topMargin15}>
+        <InputLabel htmlFor="email">Email</InputLabel>
+        <Input
+          className={commonClasses.darkText}
+          value={state.email}
+          name="email"
+          onChange={e => handleChange(e)}
+          id="email"
+          type="email"
+          required
         />
-      </Card>
-      <FormTitle />
-      <UserForm />
-    </>
+      </FormControl>
+      <FormControl className={commonClasses.topMargin15}>
+        <InputLabel htmlFor="password">Password</InputLabel>
+        <Input
+          className={commonClasses.darkText}
+          value={state.password}
+          name="password"
+          onChange={e => handleChange(e)}
+          id="password"
+          type="password"
+          required
+        />
+      </FormControl>
+      <Button
+        onClick={() => handleSubmit(state)}
+        className={`${commonClasses.topMargin15} ${commonClasses.whiteText}`}
+        variant="contained"
+        color="primary"
+      >
+        LOGIN
+      </Button>
+    </form>
   );
+};
+
+LoginPage.propTypes = {
+  setLoggedIn: PropTypes.func.isRequired,
 };
 
 export default LoginPage;
