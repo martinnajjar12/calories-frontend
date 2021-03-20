@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 import Header from './Header';
 import MemberPageContent from './MemberPageContent';
 import NavigationBar from './NavigationBar';
@@ -13,12 +14,26 @@ const fatsInfo = 'Fats can be found in different kinds of food such as Avocado, 
 
 const MemberPage = () => {
   const commonClasses = commonStyles();
+  const [meal, setMeal] = useState({
+    Carbohydrates: 0,
+    Fats: 0,
+    Proteins: 0,
+  });
+
+  const changeHandler = (food, amount) => {
+    setMeal({
+      ...meal,
+      [food]: meal[food] + amount,
+    });
+  };
+
   return (
     <div className={commonClasses.bottomMargin70}>
       <Header title="Add Meal" />
-      <MemberPageContent name="Carbohydrates" image={carbohydrates} info={carbInfo} />
-      <MemberPageContent name="Proteins" image={proteins} info={proteinsInfo} />
-      <MemberPageContent name="Fats" image={fats} info={fatsInfo} />
+      <MemberPageContent changeHandler={changeHandler} name="Carbohydrates" image={carbohydrates} info={carbInfo} />
+      <MemberPageContent changeHandler={changeHandler} name="Proteins" image={proteins} info={proteinsInfo} />
+      <MemberPageContent changeHandler={changeHandler} name="Fats" image={fats} info={fatsInfo} />
+      <Button color="primary" variant="contained" className={commonClasses.whiteText}>ADD MEAL</Button>
       <NavigationBar />
     </div>
   );

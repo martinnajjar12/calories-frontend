@@ -9,6 +9,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import commonStyles from '../utils/commonStyles';
+import calories from '../assets/images/calories.png';
 
 const useStyles = makeStyles({
   root: {
@@ -35,7 +36,7 @@ const GuestPage = () => {
       <Card className={classes.root}>
         <CardMedia
           className={classes.cardHeight}
-          image="calories.png"
+          image={calories}
         />
       </Card>
       <Grid container alignItems="center" direction="column">

@@ -24,7 +24,12 @@ const useStyles = makeStyles({
   },
 });
 
-const MemberPageContent = ({ name, image, info }) => {
+const MemberPageContent = ({
+  name,
+  image,
+  info,
+  changeHandler,
+}) => {
   const classes = useStyles();
   const commonClasses = commonStyles();
   return (
@@ -45,6 +50,7 @@ const MemberPageContent = ({ name, image, info }) => {
       </CardActionArea>
       <CardActions>
         <TextField
+          onChange={e => changeHandler(name, e.target.value)}
           className={commonClasses.darkText}
           fullWidth
           value=""
@@ -65,6 +71,7 @@ MemberPageContent.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
+  changeHandler: PropTypes.func.isRequired,
 };
 
 export default MemberPageContent;
