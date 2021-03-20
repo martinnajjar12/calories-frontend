@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import FormTitle from './FormTitle';
-import UserForm from './UserForm';
+import RegistrationForm from './RegistrationForm';
+import Header from './Header';
 
 const defaultState = {
   name: '',
@@ -36,8 +37,9 @@ const RegistrationPage = ({ setLoggedIn }) => {
 
   return (
     <>
-      <FormTitle />
-      <UserForm handleChange={handleChange} handleSubmit={handleSubmit} state={state} />
+      <Header title="Calories Tracker" />
+      <FormTitle title="Register" />
+      <RegistrationForm handleChange={handleChange} handleSubmit={handleSubmit} state={state} />
     </>
   );
 };

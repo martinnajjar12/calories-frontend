@@ -34,7 +34,7 @@ const LoginForm = ({ setLoggedIn }) => {
   };
 
   return (
-    <form className={`${commonClasses.centerVertically} ${commonClasses.topMargin50} ${commonClasses.bottomMargin50}`}>
+    <form className={`${commonClasses.centerVertically} ${commonClasses.topMargin40} ${commonClasses.bottomMargin50}`}>
       <FormControl className={commonClasses.topMargin15}>
         <InputLabel htmlFor="email">Email</InputLabel>
         <Input
@@ -61,7 +61,7 @@ const LoginForm = ({ setLoggedIn }) => {
       </FormControl>
       <Button
         onClick={() => handleSubmit(state)}
-        className={`${commonClasses.topMargin15} ${commonClasses.whiteText}`}
+        className={`${commonClasses.topMargin30} ${commonClasses.whiteText}`}
         variant="contained"
         color="primary"
       >

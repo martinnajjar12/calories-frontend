@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import commonStyles from '../utils/commonStyles';
 
-const UserForm = ({ state, handleChange, handleSubmit }) => {
+const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
   const commonClasses = commonStyles();
 
   return (
@@ -138,7 +138,7 @@ const UserForm = ({ state, handleChange, handleSubmit }) => {
       </FormControl>
       <Button
         onClick={() => handleSubmit(state)}
-        className={`${commonClasses.topMargin15} ${commonClasses.whiteText}`}
+        className={`${commonClasses.topMargin30} ${commonClasses.whiteText}`}
         variant="contained"
         color="primary"
       >
@@ -148,11 +148,11 @@ const UserForm = ({ state, handleChange, handleSubmit }) => {
   );
 };
 
-UserForm.propTypes = {
+RegistrationForm.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   state: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 
-export default UserForm;
+export default RegistrationForm;

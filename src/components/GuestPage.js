@@ -39,7 +39,7 @@ const GuestPage = () => {
         />
       </Card>
       <Grid container alignItems="center" direction="column">
-        <Link className={`${commonClasses.topMargin50} ${commonClasses.anchorText}`} to="/login"><Button className={commonClasses.whiteText} color="primary" variant="contained">Login</Button></Link>
+        <Link className={`${commonClasses.topMargin40} ${commonClasses.anchorText}`} to="/login"><Button className={commonClasses.whiteText} color="primary" variant="contained">Login</Button></Link>
         <Link className={`${commonClasses.topMargin15} ${commonClasses.anchorText}`} to="/registration"><Button className={commonClasses.whiteText} color="primary" variant="contained">Create an account</Button></Link>
       </Grid>
     </>

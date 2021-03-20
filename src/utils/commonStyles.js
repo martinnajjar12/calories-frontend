@@ -21,14 +21,17 @@ const commonStyles = makeStyles({
     alignItems: 'center',
     flexDirection: 'column',
   },
-  topMargin50: {
-    marginTop: 50,
+  topMargin40: {
+    marginTop: 40,
   },
   bottomMargin50: {
     marginBottom: 50,
   },
   topMargin15: {
     marginTop: 15,
+  },
+  topMargin30: {
+    marginTop: 30,
   },
   formControlWidth: {
     minWidth: 174,
