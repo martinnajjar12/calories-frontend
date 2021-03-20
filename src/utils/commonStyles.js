@@ -36,6 +36,10 @@ const commonStyles = makeStyles({
   whiteText: {
     color: '#fff',
   },
+  anchorText: {
+    color: '#fff',
+    textDecoration: 'none',
+  },
 });
 
 export default commonStyles;

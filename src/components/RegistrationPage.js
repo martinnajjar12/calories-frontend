@@ -1,8 +1,3 @@
-import {
-  Card,
-  CardMedia,
-  makeStyles,
-} from '@material-ui/core';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -21,24 +16,7 @@ const defaultState = {
   activity: '',
 };
 
-const useStyles = makeStyles({
-  root: {
-    boxShadow: 'none',
-    marginTop: 40,
-    backgroundColor: '#fafafa',
-  },
-  cardHeight: {
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    height: 0,
-    maxWidth: 300,
-    paddingBottom: 125,
-    margin: '0 auto',
-  },
-});
-
-const LoginPage = ({ setLoggedIn }) => {
-  const classes = useStyles();
+const RegistrationPage = ({ setLoggedIn }) => {
   const [state, setState] = useState(defaultState);
 
   const handleChange = e => setState({
@@ -58,20 +36,18 @@ const LoginPage = ({ setLoggedIn }) => {
 
   return (
     <>
-      <Card className={classes.root}>
-        <CardMedia
-          className={classes.cardHeight}
-          image="calories.png"
-        />
-      </Card>
       <FormTitle />
       <UserForm handleChange={handleChange} handleSubmit={handleSubmit} state={state} />
     </>
   );
 };
 
-LoginPage.propTypes = {
-  setLoggedIn: PropTypes.func.isRequired,
+RegistrationPage.propTypes = {
+  setLoggedIn: PropTypes.func,
 };
 
-export default LoginPage;
+RegistrationPage.defaultProps = {
+  setLoggedIn: () => true,
+};
+
+export default RegistrationPage;

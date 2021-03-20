@@ -1,13 +1,16 @@
 import {
-  unstable_createMuiStrictModeTheme as createMuiTheme,
   CssBaseline,
   ThemeProvider,
+  unstable_createMuiStrictModeTheme as createMuiTheme,
 } from '@material-ui/core';
-import { useState } from 'react';
-import Header from './components/Header';
-// import RegistrationPage from './components/RegistrationPage';
-import NavigationBar from './components/NavigationBar';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import GuestPage from './components/GuestPage';
 import LoginPage from './components/LoginPage';
+import RegistrationPage from './components/RegistrationPage';
 
 const theme = createMuiTheme({
   palette: {
@@ -34,24 +37,17 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
-  if (loggedIn) {
-    return (
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Header title="name" />
-        <NavigationBar />
-      </ThemeProvider>
-    );
-  }
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Header title="Calories Tracker" />
-      <LoginPage setLoggedIn={setLoggedIn} />
-    </ThemeProvider>
-  );
-};
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={GuestPage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/registration" component={RegistrationPage} />
+      </Switch>
+    </BrowserRouter>
+    <CssBaseline />
+  </ThemeProvider>
+);
 
 export default App;
