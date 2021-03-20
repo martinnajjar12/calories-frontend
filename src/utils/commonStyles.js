@@ -46,6 +46,9 @@ const commonStyles = makeStyles({
     color: '#fff',
     textDecoration: 'none',
   },
+  flex1: {
+    flex: 1,
+  },
 });
 
 export default commonStyles;

@@ -10,22 +10,28 @@ import {
   TrendingUp,
 } from '@material-ui/icons';
 import { Grid, Typography } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import commonStyles from '../utils/commonStyles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   appBar: {
     top: 'auto',
     bottom: 0,
     backgroundColor: '#67899c',
   },
   fSize: {
-    fontSize: 12,
+    fontSize: 9,
+    [theme.breakpoints.up(390)]: {
+      fontSize: 12,
+    },
   },
   whiteCol: {
     color: '#fff',
   },
-});
+  activeBg: {
+    backgroundColor: '#62b5e5',
+  },
+}));
 
 const NavigationBar = () => {
   const classes = useStyles();
@@ -36,38 +42,38 @@ const NavigationBar = () => {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar disableGutters>
           <Grid container justify="space-between">
-            <Link className={commonClasses.anchorText} to="/">
+            <NavLink exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/">
               <IconButton className={classes.whiteCol}>
                 <Grid container direction="column" alignItems="center">
                   <InsertChart />
                   <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">Add Measure</Typography>
                 </Grid>
               </IconButton>
-            </Link>
-            <Link className={commonClasses.anchorText} to="/meals">
+            </NavLink>
+            <NavLink exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/meals">
               <IconButton className={classes.whiteCol}>
                 <Grid container direction="column" alignItems="center">
                   <TrendingUp />
                   <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">Track It</Typography>
                 </Grid>
               </IconButton>
-            </Link>
-            <Link className={commonClasses.anchorText} to="/progress">
+            </NavLink>
+            <NavLink exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/progress">
               <IconButton className={classes.whiteCol}>
                 <Grid container direction="column" alignItems="center">
                   <PieChart />
                   <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">Progress</Typography>
                 </Grid>
               </IconButton>
-            </Link>
-            <Link className={commonClasses.anchorText} to="/more">
+            </NavLink>
+            <NavLink exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/more">
               <IconButton className={classes.whiteCol}>
                 <Grid container direction="column" alignItems="center">
                   <MoreHoriz />
                   <Typography component="p" className={classes.fSize} variant="subtitle2" color="textPrimary">More</Typography>
                 </Grid>
               </IconButton>
-            </Link>
+            </NavLink>
           </Grid>
         </Toolbar>
       </AppBar>
