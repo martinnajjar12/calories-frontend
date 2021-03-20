@@ -27,6 +27,9 @@ const commonStyles = makeStyles({
   bottomMargin50: {
     marginBottom: 50,
   },
+  bottomMargin70: {
+    marginBottom: 70,
+  },
   topMargin15: {
     marginTop: 15,
   },
