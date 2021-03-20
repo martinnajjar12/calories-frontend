@@ -11,8 +11,11 @@ import {
 } from 'react-router-dom';
 import GuestPage from './components/GuestPage';
 import LoginPage from './components/LoginPage';
+import Meals from './components/Meals';
 import MemberPage from './components/MemberPage';
+import Progress from './components/Progress';
 import RegistrationPage from './components/RegistrationPage';
+import More from './components/More';
 
 const theme = createMuiTheme({
   palette: {
@@ -50,6 +53,9 @@ const App = () => {
           </Route>
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/registration" component={RegistrationPage} />
+          <Route exact path="/meals" component={Meals} />
+          <Route exact path="/progress" component={Progress} />
+          <Route exact path="/more" component={More} />
         </Switch>
       </BrowserRouter>
       <CssBaseline />

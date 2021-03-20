@@ -4,7 +4,7 @@ import NavigationBar from './NavigationBar';
 
 const MemberPage = () => (
   <>
-    <Header title="Add Measurement" />
+    <Header title="Add Meal" />
     <NavigationBar />
   </>
 );
