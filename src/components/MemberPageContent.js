@@ -29,6 +29,7 @@ const MemberPageContent = ({
   image,
   info,
   changeHandler,
+  value,
 }) => {
   const classes = useStyles();
   const commonClasses = commonStyles();
@@ -51,14 +52,14 @@ const MemberPageContent = ({
       <CardActions>
         <TextField
           onChange={e => changeHandler(name, e.target.value)}
-          className={commonClasses.darkText}
+          inputProps={{ className: commonClasses.darkText }}
           fullWidth
-          value=""
+          value={value}
           name={name}
           label={name}
+          helperText="Should be in Gram"
           required
           variant="outlined"
-          helperText="Should be in Gram"
           margin="dense"
           type="number"
         />
@@ -72,6 +73,7 @@ MemberPageContent.propTypes = {
   image: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
   changeHandler: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default MemberPageContent;

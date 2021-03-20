@@ -15,25 +15,29 @@ const fatsInfo = 'Fats can be found in different kinds of food such as Avocado, 
 const MemberPage = () => {
   const commonClasses = commonStyles();
   const [meal, setMeal] = useState({
-    Carbohydrates: 0,
-    Fats: 0,
-    Proteins: 0,
+    Carbohydrates: '',
+    Fats: '',
+    Proteins: '',
   });
 
   const changeHandler = (food, amount) => {
     setMeal({
       ...meal,
-      [food]: meal[food] + amount,
+      [food]: amount,
     });
+  };
+
+  const submitHandler = () => {
+    console.log(meal);
   };
 
   return (
     <div className={commonClasses.bottomMargin70}>
       <Header title="Add Meal" />
-      <MemberPageContent changeHandler={changeHandler} name="Carbohydrates" image={carbohydrates} info={carbInfo} />
-      <MemberPageContent changeHandler={changeHandler} name="Proteins" image={proteins} info={proteinsInfo} />
-      <MemberPageContent changeHandler={changeHandler} name="Fats" image={fats} info={fatsInfo} />
-      <Button color="primary" variant="contained" className={commonClasses.whiteText}>ADD MEAL</Button>
+      <MemberPageContent value={meal.Carbohydrates} changeHandler={changeHandler} name="Carbohydrates" image={carbohydrates} info={carbInfo} />
+      <MemberPageContent value={meal.Proteins} changeHandler={changeHandler} name="Proteins" image={proteins} info={proteinsInfo} />
+      <MemberPageContent value={meal.Fats} changeHandler={changeHandler} name="Fats" image={fats} info={fatsInfo} />
+      <Button type="submit" onClick={submitHandler} color="primary" variant="contained" className={commonClasses.whiteText}>ADD MEAL</Button>
       <NavigationBar />
     </div>
   );
