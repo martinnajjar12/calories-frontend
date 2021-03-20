@@ -27,9 +27,8 @@ const LoginForm = ({ setLoggedIn }) => {
 
   const handleSubmit = info => {
     axios.post('http://localhost:3000/auth/sign_in', info)
-      .then(res => {
+      .then(() => {
         setLoggedIn(true);
-        console.log(res.headers);
       });
   };
 
