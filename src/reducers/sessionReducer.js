@@ -20,6 +20,7 @@ const sessionReducer = (state = initialState, action) => {
     case LOGOUT:
       return {
         ...state,
+        ...action.payload,
         isLogged: false,
       };
     default:

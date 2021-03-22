@@ -37,7 +37,7 @@ const RegistrationPage = ({ setLoggedIn }) => {
 
   return (
     <>
-      <Header title="Calories Tracker" />
+      <Header title="Calories Tracker" isLogged={false} />
       <FormTitle title="Register" />
       <RegistrationForm handleChange={handleChange} handleSubmit={handleSubmit} state={state} />
     </>

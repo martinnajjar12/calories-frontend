@@ -32,7 +32,7 @@ const GuestPage = () => {
   const classes = useStyles();
   return (
     <>
-      <Header title="Calories Tracker" />
+      <Header title="Calories Tracker" isLogged={false} />
       <Card className={classes.root}>
         <CardMedia
           className={classes.cardHeight}

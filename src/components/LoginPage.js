@@ -10,7 +10,7 @@ const LoginPage = () => {
   const commonClasses = commonStyles();
   return (
     <>
-      <Header title="Calories Tracker" />
+      <Header title="Calories Tracker" isLogged={false} />
       <FormTitle title="Login" />
       <LoginForm />
       <Grid container alignItems="center" justify="center">

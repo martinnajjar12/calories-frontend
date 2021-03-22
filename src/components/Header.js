@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Header = ({ title }) => {
+const Header = ({ title, isLogged }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const { uid, client, accessToken } = useSelector(state => state.sessionReducer);
@@ -60,9 +60,11 @@ const Header = ({ title }) => {
         <div className={classes.flex1} />
         <Typography className={classes.fontStyles} component="h1" color="textPrimary" align="center">{title}</Typography>
         <div className={classes.iconWrapper}>
-          <IconButton className={classes.marginLeftAuto} edge="end" onClick={() => logOut(uid, accessToken, client)}>
-            <ExitToAppIcon />
-          </IconButton>
+          { isLogged ? (
+            <IconButton className={classes.marginLeftAuto} edge="end" onClick={() => logOut(uid, accessToken, client)}>
+              <ExitToAppIcon />
+            </IconButton>
+          ) : ''}
         </div>
       </Toolbar>
     </AppBar>
@@ -71,6 +73,11 @@ const Header = ({ title }) => {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  isLogged: true,
 };
 
 export default Header;
