@@ -11,6 +11,7 @@ import {
 import PropTypes from 'prop-types';
 import React from 'react';
 import commonStyles from '../utils/commonStyles';
+import SubmitButton from './SubmitButton';
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +19,9 @@ const useStyles = makeStyles({
     maxWidth: 500,
     boxShadow: 'none',
     margin: '30px auto 0',
+  },
+  cardActionRoot: {
+    flexDirection: 'column',
   },
   media: {
     height: 140,
@@ -49,10 +53,10 @@ const MemberPageContent = ({
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className={classes.cardActionRoot}>
         <TextField
           onChange={e => changeHandler(name, e.target.value)}
-          inputProps={{ className: commonClasses.darkText }}
+          inputProps={{ min: 0, className: commonClasses.darkText }}
           fullWidth
           value={value}
           name={name}
@@ -63,6 +67,7 @@ const MemberPageContent = ({
           margin="dense"
           type="number"
         />
+        <SubmitButton />
       </CardActions>
     </Card>
   );
