@@ -5,7 +5,6 @@ import {
 } from '@material-ui/core';
 import {
   BrowserRouter,
-  Route,
   Switch,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -46,7 +45,6 @@ const theme = createMuiTheme({
 
 const App = () => {
   const { isLogged } = useSelector(state => state.sessionReducer);
-  console.log(isLogged);
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
@@ -55,9 +53,9 @@ const App = () => {
           <MemberProtectedRoute isLogged={isLogged} exact path="/login" component={LoginPage} />
           <MemberProtectedRoute isLogged={isLogged} exact path="/welcome" component={GuestPage} />
           <MemberProtectedRoute isLogged={isLogged} exact path="/registration" component={RegistrationPage} />
-          <Route exact path="/meals" component={Meals} />
-          <Route exact path="/progress" component={Progress} />
-          <Route exact path="/more" component={More} />
+          <GuestProtectedRoute isLogged={isLogged} exact path="/meals" component={Meals} />
+          <GuestProtectedRoute isLogged={isLogged} exact path="/progress" component={Progress} />
+          <GuestProtectedRoute isLogged={isLogged} path="/more" component={More} />
         </Switch>
       </BrowserRouter>
       <CssBaseline />

@@ -1,10 +1,10 @@
 import { LOGIN, LOGOUT } from '../actionTypes';
 
 const initialState = {
-  'access-token': sessionStorage.getItem('accessToken'),
+  accessToken: sessionStorage.getItem('accessToken'),
   expiry: sessionStorage.getItem('expiry'),
   client: sessionStorage.getItem('client'),
-  'token-type': sessionStorage.getItem('token-type'),
+  tokenType: sessionStorage.getItem('token-type'),
   uid: sessionStorage.getItem('uid'),
   isLogged: !!sessionStorage.getItem('isLogged'),
 };
