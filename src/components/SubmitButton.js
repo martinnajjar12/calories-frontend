@@ -73,6 +73,7 @@ const SubmitButton = () => {
           color="primary"
           className={buttonClassname}
           onClick={handleButtonClick}
+          size="medium"
         >
           {success ? <CheckIcon /> : <SaveIcon />}
         </Fab>
@@ -86,7 +87,7 @@ const SubmitButton = () => {
           disabled={loading}
           onClick={handleButtonClick}
         >
-          Save
+          { success ? 'Saved' : 'Save' }
         </Button>
         {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
       </div>

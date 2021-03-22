@@ -6,16 +6,18 @@ import {
 } from '@material-ui/core';
 import axios from 'axios';
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import commonStyles from '../utils/commonStyles';
+import login from '../actions/login';
 
 const defaultState = {
   email: '',
   password: '',
 };
 
-const LoginForm = ({ setLoggedIn }) => {
+const LoginForm = () => {
   const [state, setState] = useState(defaultState);
+  const dispatch = useDispatch();
   const commonClasses = commonStyles();
 
   const handleChange = e => {
@@ -27,8 +29,8 @@ const LoginForm = ({ setLoggedIn }) => {
 
   const handleSubmit = info => {
     axios.post('http://localhost:3000/auth/sign_in', info)
-      .then(() => {
-        setLoggedIn(true);
+      .then(response => {
+        dispatch(login(response.headers));
       });
   };
 
@@ -68,14 +70,6 @@ const LoginForm = ({ setLoggedIn }) => {
       </Button>
     </form>
   );
-};
-
-LoginForm.propTypes = {
-  setLoggedIn: PropTypes.func,
-};
-
-LoginForm.defaultProps = {
-  setLoggedIn: () => true,
 };
 
 export default LoginForm;
