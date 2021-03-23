@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import FormTitle from './FormTitle';
-import RegistrationForm from './RegistrationForm';
-import Header from './Header';
+import FormTitle from '../components/FormTitle';
+import RegistrationForm from '../components/RegistrationForm';
+import Header from '../components/Header';
 import register from '../actions/register';
 
 const defaultState = {
@@ -26,7 +26,10 @@ const RegistrationPage = () => {
     [e.target.name]: e.target.value,
   });
 
-  const handleSubmit = info => dispatch(register(info));
+  const handleSubmit = (e, info) => {
+    e.preventDefault();
+    dispatch(register(info));
+  };
 
   return (
     <>

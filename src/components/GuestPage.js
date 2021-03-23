@@ -30,6 +30,7 @@ const useStyles = makeStyles({
 const GuestPage = () => {
   const commonClasses = commonStyles();
   const classes = useStyles();
+
   return (
     <>
       <Header title="Calories Tracker" isLogged={false} />

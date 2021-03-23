@@ -137,7 +137,8 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
         </Select>
       </FormControl>
       <Button
-        onClick={() => handleSubmit(state)}
+        type="submit"
+        onClick={e => handleSubmit(e, state)}
         className={`${commonClasses.topMargin30} ${commonClasses.whiteText}`}
         variant="contained"
         color="primary"

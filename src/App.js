@@ -9,11 +9,11 @@ import {
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import GuestPage from './components/GuestPage';
-import LoginPage from './components/LoginPage';
+import LoginPage from './containers/LoginPage';
 import Meals from './components/Meals';
 import MemberPage from './components/MemberPage';
 import Progress from './components/Progress';
-import RegistrationPage from './components/RegistrationPage';
+import RegistrationPage from './containers/RegistrationPage';
 import More from './components/More';
 import MemberProtectedRoute from './protectedRoutes/MemberProtectedRoute';
 import GuestProtectedRoute from './protectedRoutes/GuestProtectedRoute';

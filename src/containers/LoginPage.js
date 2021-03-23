@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import login from '../actions/login';
 import commonStyles from '../utils/commonStyles';
-import FormTitle from './FormTitle';
-import Header from './Header';
-import LoginForm from './LoginForm';
+import FormTitle from '../components/FormTitle';
+import Header from '../components/Header';
+import LoginForm from '../components/LoginForm';
 
 const defaultState = {
   email: '',
