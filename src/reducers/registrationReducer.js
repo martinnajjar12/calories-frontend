@@ -1,4 +1,4 @@
-import { REGISTER } from '../actionTypes';
+import { DELETE_REGISTRATION_SESSION, REGISTER } from '../actionTypes';
 
 const defaultState = {
   name: '',
@@ -20,6 +20,12 @@ const registrationReducer = (state = defaultState, { type, payload }) => {
         ...state,
         ...payload,
         isRegisteredAndLogged: true,
+      };
+    case DELETE_REGISTRATION_SESSION:
+      return {
+        ...state,
+        ...payload,
+        isRegisteredAndLogged: false,
       };
 
     default:

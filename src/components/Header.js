@@ -11,6 +11,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import logout from '../actions/logout';
+import deleteRegistrationSession from '../actions/deleteRegistrationSession';
 
 const useStyles = makeStyles({
   root: {
@@ -37,7 +38,13 @@ const useStyles = makeStyles({
 const Header = ({ title, isLogged }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const { uid, client, accessToken } = useSelector(state => state.sessionState);
+  let { uid, client, accessToken } = useSelector(state => state.sessionState);
+  if (uid === null || client === null || accessToken === null) {
+    const registrationState = useSelector(state => state.registrationState);
+    uid = registrationState.uid;
+    client = registrationState.client;
+    accessToken = registrationState.accessToken;
+  }
 
   const logOut = (uid, accessToken, client) => {
     axios.delete('http://localhost:3000/auth/sign_out', {
@@ -50,6 +57,7 @@ const Header = ({ title, isLogged }) => {
       .then(resp => {
         if (resp.status === 200) {
           dispatch(logout());
+          dispatch(deleteRegistrationSession());
         }
       });
   };
