@@ -4,35 +4,12 @@ import {
   Input,
   InputLabel,
 } from '@material-ui/core';
-import axios from 'axios';
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import PropTypes from 'prop-types';
 import commonStyles from '../utils/commonStyles';
-import login from '../actions/login';
 
-const defaultState = {
-  email: '',
-  password: '',
-};
-
-const LoginForm = () => {
-  const [state, setState] = useState(defaultState);
-  const dispatch = useDispatch();
+const LoginForm = ({ submitHandler, changeHandler, state }) => {
   const commonClasses = commonStyles();
-
-  const handleChange = e => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = info => {
-    axios.post('http://localhost:3000/auth/sign_in', info)
-      .then(response => {
-        dispatch(login(response.headers));
-      });
-  };
 
   return (
     <form className={`${commonClasses.centerVertically} ${commonClasses.topMargin40} ${commonClasses.bottomMargin50}`}>
@@ -42,7 +19,7 @@ const LoginForm = () => {
           className={commonClasses.darkText}
           value={state.email}
           name="email"
-          onChange={e => handleChange(e)}
+          onChange={e => changeHandler(e)}
           id="email"
           type="email"
           required
@@ -54,14 +31,15 @@ const LoginForm = () => {
           className={commonClasses.darkText}
           value={state.password}
           name="password"
-          onChange={e => handleChange(e)}
+          onChange={e => changeHandler(e)}
           id="password"
           type="password"
           required
         />
       </FormControl>
       <Button
-        onClick={() => handleSubmit(state)}
+        type="submit"
+        onClick={e => submitHandler(e, state)}
         className={`${commonClasses.topMargin30} ${commonClasses.whiteText}`}
         variant="contained"
         color="primary"
@@ -70,6 +48,13 @@ const LoginForm = () => {
       </Button>
     </form>
   );
+};
+
+LoginForm.propTypes = {
+  submitHandler: PropTypes.func.isRequired,
+  changeHandler: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  state: PropTypes.object.isRequired,
 };
 
 export default LoginForm;

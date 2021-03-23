@@ -1,7 +1,8 @@
+import axios from 'axios';
 import { LOGIN } from '../actionTypes/index';
 import saveToSessionStorage from '../utils/sessionStorage';
 
-const login = data => {
+const pureLogin = data => {
   saveToSessionStorage(data, true);
   return ({
     type: LOGIN,
@@ -14,5 +15,10 @@ const login = data => {
     },
   });
 };
+
+const login = info => dispatch => axios.post('http://localhost:3000/auth/sign_in', info)
+  .then(response => {
+    dispatch(pureLogin(response.headers));
+  });
 
 export default login;
