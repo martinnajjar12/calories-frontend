@@ -19,7 +19,6 @@ const pureRegister = data => {
 const register = info => dispatch => axios.post('http://localhost:3000/auth', info)
   .then(response => {
     if (response.status === 200) {
-      console.log(response);
       dispatch(pureRegister(response.headers));
     }
   });
