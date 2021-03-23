@@ -1,39 +1,32 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import FormTitle from './FormTitle';
 import RegistrationForm from './RegistrationForm';
 import Header from './Header';
+import register from '../actions/register';
 
 const defaultState = {
   name: '',
   email: '',
   password: '',
   passwordConfirmation: '',
-  age: 0,
+  age: '',
   gender: '',
-  height: 0,
-  weight: 0,
+  height: '',
+  weight: '',
   activity: '',
 };
 
-const RegistrationPage = ({ setLoggedIn }) => {
+const RegistrationPage = () => {
   const [state, setState] = useState(defaultState);
+  const dispatch = useDispatch();
 
   const handleChange = e => setState({
     ...state,
     [e.target.name]: e.target.value,
   });
 
-  const handleSubmit = info => {
-    axios.post('http://localhost:3000/auth', info)
-      .then(response => {
-        if (response.status === 200) {
-          setLoggedIn(true);
-          setState(defaultState);
-        }
-      });
-  };
+  const handleSubmit = info => dispatch(register(info));
 
   return (
     <>
@@ -42,14 +35,6 @@ const RegistrationPage = ({ setLoggedIn }) => {
       <RegistrationForm handleChange={handleChange} handleSubmit={handleSubmit} state={state} />
     </>
   );
-};
-
-RegistrationPage.propTypes = {
-  setLoggedIn: PropTypes.func,
-};
-
-RegistrationPage.defaultProps = {
-  setLoggedIn: () => true,
 };
 
 export default RegistrationPage;

@@ -37,7 +37,7 @@ const useStyles = makeStyles({
 const Header = ({ title, isLogged }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const { uid, client, accessToken } = useSelector(state => state.sessionReducer);
+  const { uid, client, accessToken } = useSelector(state => state.sessionState);
 
   const logOut = (uid, accessToken, client) => {
     axios.delete('http://localhost:3000/auth/sign_out', {

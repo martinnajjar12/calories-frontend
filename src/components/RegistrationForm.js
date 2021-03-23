@@ -56,7 +56,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
         <InputLabel htmlFor="passwordConfirmation">Password Confirmation</InputLabel>
         <Input
           className={commonClasses.darkText}
-          value={state.passwordConfimation}
+          value={state.passwordConfirmation}
           name="passwordConfirmation"
           onChange={e => handleChange(e)}
           id="passwordConfirmation"
