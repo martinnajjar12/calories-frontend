@@ -11,7 +11,7 @@ import {
 import PropTypes from 'prop-types';
 import React from 'react';
 import commonStyles from '../utils/commonStyles';
-import SubmitButton from './SubmitButton';
+// import SubmitButton from './SubmitButton';
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +34,7 @@ const MemberPageContent = ({
   info,
   changeHandler,
   value,
+  // submitHandler,
 }) => {
   const classes = useStyles();
   const commonClasses = commonStyles();
@@ -67,7 +68,7 @@ const MemberPageContent = ({
           margin="dense"
           type="number"
         />
-        <SubmitButton />
+        {/* <SubmitButton submitHandler={submitHandler} name={name} /> */}
       </CardActions>
     </Card>
   );
@@ -79,6 +80,7 @@ MemberPageContent.propTypes = {
   info: PropTypes.string.isRequired,
   changeHandler: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
+  // submitHandler: PropTypes.func.isRequired,
 };
 
 export default MemberPageContent;

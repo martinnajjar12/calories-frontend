@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
 import CheckIcon from '@material-ui/icons/Check';
 import SaveIcon from '@material-ui/icons/Save';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -40,28 +41,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SubmitButton = () => {
+const SubmitButton = ({ submitHandler, name }) => {
   const classes = useStyles();
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
-  const timer = React.useRef();
 
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,
   });
 
-  React.useEffect(() => () => {
-    clearTimeout(timer.current);
-  }, []);
-
   const handleButtonClick = () => {
     if (!loading) {
       setSuccess(false);
       setLoading(true);
-      timer.current = window.setTimeout(() => {
-        setSuccess(true);
-        setLoading(false);
-      }, 2000);
+      submitHandler(name);
+      setLoading(false);
+      setSuccess(true);
     }
   };
 
@@ -93,6 +88,11 @@ const SubmitButton = () => {
       </div>
     </div>
   );
+};
+
+SubmitButton.propTypes = {
+  submitHandler: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default SubmitButton;

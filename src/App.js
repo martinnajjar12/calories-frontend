@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import GuestPage from './components/GuestPage';
 import LoginPage from './containers/LoginPage';
 import Meals from './components/Meals';
-import MemberPage from './components/MemberPage';
+import MemberPage from './containers/MemberPage';
 import Progress from './components/Progress';
 import RegistrationPage from './containers/RegistrationPage';
 import More from './components/More';
