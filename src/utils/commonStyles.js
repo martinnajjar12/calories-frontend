@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core';
 
 const commonStyles = makeStyles({
+  normalPadding: {
+    padding: 15,
+  },
   textSecondary: {
     color: '#000',
     opacity: 0.5,
@@ -48,6 +51,21 @@ const commonStyles = makeStyles({
   },
   flex1: {
     flex: 1,
+  },
+  displayFlex: {
+    display: 'flex',
+  },
+  fontWeightBold: {
+    fontWeight: 'bold',
+  },
+  avatarPadding: {
+    padding: 25,
+  },
+  leftMargin15: {
+    marginLeft: 15,
+  },
+  morePaperBg: {
+    backgroundColor: '#eceded',
   },
 });
 
