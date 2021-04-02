@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../actionTypes';
+import { LOGIN, LOGOUT, SUBMIT_VALUES } from '../actionTypes';
 
 const initialState = {
   accessToken: sessionStorage.getItem('accessToken'),
@@ -22,6 +22,11 @@ const sessionReducer = (state = initialState, action) => {
         ...state,
         ...action.payload,
         isLogged: false,
+      };
+    case SUBMIT_VALUES:
+      return {
+        ...state,
+        ...action.payload,
       };
     default:
       return state;

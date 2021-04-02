@@ -2,3 +2,4 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const REGISTER = 'REGISTER';
 export const DELETE_REGISTRATION_SESSION = 'DELETE_REGISTRATION_SESSION';
+export const SUBMIT_VALUES = 'SUBMIT_VALUES';

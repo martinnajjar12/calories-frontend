@@ -38,8 +38,9 @@ const Header = ({ title, isLogged }) => {
   const classes = useStyles();
   let { uid, client, accessToken } = useSelector(state => state.sessionState);
 
-  if (uid === null || client === null || accessToken === null) {
-    const registrationState = useSelector(state => state.registrationState);
+  const registrationState = useSelector(state => state.registrationState);
+
+  if (!accessToken) {
     uid = registrationState.uid;
     client = registrationState.client;
     accessToken = registrationState.accessToken;
