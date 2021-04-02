@@ -32,7 +32,6 @@ const submitValues = ({
 }).then(response => {
   if (response.status === 200) {
     const firstResponse = response;
-    console.log(firstResponse);
     axios.post('http://localhost:3000/api/v1/measurements/create', {
       uid,
       'access-token': accessToken,
@@ -49,8 +48,18 @@ const submitValues = ({
           expiry,
           measure: 'fats',
           value: meal.Fats,
-        }).then(() => {
-          dispatch(pureSubmitValues(firstResponse.headers));
+        }).then(response => {
+          if (response.status === 200) {
+            const caloriesValue = (meal.Fats * 9) + (meal.Carbohydrates * 4) + (meal.Proteins * 4);
+            axios.post('http://localhost:3000/api/v1/measurements/create', {
+              uid,
+              'access-token': accessToken,
+              client,
+              expiry,
+              measure: 'calories',
+              value: caloriesValue,
+            }).then(() => dispatch(pureSubmitValues(firstResponse.headers)));
+          }
         });
       }
     });
