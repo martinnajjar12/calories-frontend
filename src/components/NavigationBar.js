@@ -10,8 +10,10 @@ import {
   TrendingUp,
 } from '@material-ui/icons';
 import { Grid, Typography } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import commonStyles from '../utils/commonStyles';
+import fetchCaloriesData from '../actions/fetchCaloriesData';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -36,6 +38,30 @@ const useStyles = makeStyles(theme => ({
 const NavigationBar = () => {
   const classes = useStyles();
   const commonClasses = commonStyles();
+  const dispatch = useDispatch();
+
+  let {
+    uid,
+    client,
+    accessToken,
+    expiry,
+  } = useSelector(state => state.sessionState);
+
+  const registrationState = useSelector(state => state.registrationState);
+
+  if (!accessToken) {
+    uid = registrationState.uid;
+    client = registrationState.client;
+    accessToken = registrationState.accessToken;
+    expiry = registrationState.expiry;
+  }
+
+  const fetchProgressData = () => dispatch(fetchCaloriesData({
+    uid,
+    client,
+    accessToken,
+    expiry,
+  }));
 
   return (
     <>
@@ -58,7 +84,7 @@ const NavigationBar = () => {
                 </Grid>
               </IconButton>
             </NavLink>
-            <NavLink exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/progress">
+            <NavLink onClick={fetchProgressData} exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/progress">
               <IconButton className={classes.whiteCol}>
                 <Grid container direction="column" alignItems="center">
                   <PieChart />

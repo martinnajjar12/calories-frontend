@@ -1,4 +1,9 @@
-import { LOGIN, LOGOUT, SUBMIT_VALUES } from '../actionTypes';
+import {
+  FETCH_CALORIES_DATA,
+  LOGIN,
+  LOGOUT,
+  SUBMIT_VALUES,
+} from '../actionTypes';
 
 const initialState = {
   accessToken: sessionStorage.getItem('accessToken'),
@@ -27,6 +32,12 @@ const sessionReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
+      };
+    case FETCH_CALORIES_DATA:
+      return {
+        ...state,
+        ...action.payload,
+        isLogged: true,
       };
     default:
       return state;

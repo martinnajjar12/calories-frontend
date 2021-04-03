@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import {
   Chart,
@@ -18,34 +18,25 @@ const data = [
   { year: '2010', population: 6.930 },
 ];
 
-export default class Demo extends React.PureComponent {
-  constructor(props) {
-    super(props);
+const Demo = () => {
+  const [loading] = useState(true);
+  const [state] = useState(data);
 
-    this.state = {
-      data,
-    };
-  }
+  return loading ? (<h1>Loading</h1>) : (
+    <Paper>
+      <Chart data={state}>
+        <ArgumentAxis />
+        <ValueAxis />
 
-  render() {
-    const { data: chartData } = this.state;
+        <BarSeries
+          valueField="population"
+          argumentField="year"
+        />
+        <EventTracker />
+        <HoverState />
+      </Chart>
+    </Paper>
+  );
+};
 
-    return (
-      <Paper>
-        <Chart
-          data={chartData}
-        >
-          <ArgumentAxis />
-          <ValueAxis />
-
-          <BarSeries
-            valueField="population"
-            argumentField="year"
-          />
-          <EventTracker />
-          <HoverState />
-        </Chart>
-      </Paper>
-    );
-  }
-}
+export default Demo;
