@@ -7,20 +7,29 @@ import {
   Settings,
 } from '@material-ui/icons';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import commonStyles from '../utils/commonStyles';
 import Header from './Header';
 import NavigationBar from './NavigationBar';
 
 const More = () => {
   const commonClasses = commonStyles();
-  return (
+  const chartData = useSelector(state => state.chartDataState);
+
+  return chartData.length === 0 ? (
+    <>
+      <Header title="More" />
+      <h1>No data</h1>
+      <NavigationBar />
+    </>
+  ) : (
     <>
       <Header title="More" />
       <Paper elevation={0} className={`${commonClasses.normalPadding} ${commonClasses.displayFlex}`}>
-        <Avatar className={commonClasses.avatarPadding}>M</Avatar>
+        <Avatar className={commonClasses.avatarPadding}>{chartData[0].user.name[0]}</Avatar>
         <div className={commonClasses.leftMargin15}>
-          <Typography color="textSecondary" component="h2" className={commonClasses.fontWeightBold}>Martin Najjar</Typography>
-          <Typography color="primary" variant="subtitle2">Male</Typography>
+          <Typography color="textSecondary" component="h2" className={commonClasses.fontWeightBold}>{chartData[0].user.name}</Typography>
+          <Typography color="primary" variant="subtitle2">{chartData[0].user.gender}</Typography>
         </div>
       </Paper>
       <Paper elevation={0} className={`${commonClasses.displayFlex} ${commonClasses.morePaperBg} ${commonClasses.normalPadding}`}>

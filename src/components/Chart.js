@@ -6,13 +6,13 @@ import {
   ArgumentAxis,
   ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
-import { EventTracker, HoverState } from '@devexpress/dx-react-chart';
+import { EventTracker } from '@devexpress/dx-react-chart';
 import { useSelector } from 'react-redux';
 
 const Demo = () => {
   const chartData = useSelector(state => state.chartDataState);
 
-  return chartData.length === 0 ? (<h1>Loading</h1>) : (
+  return chartData.length === 0 ? (<h1>No data</h1>) : (
     <Paper>
       <Chart data={chartData}>
         <ArgumentAxis />
@@ -20,10 +20,10 @@ const Demo = () => {
 
         <BarSeries
           valueField="value"
-          argumentField="value"
+          argumentField="created_at"
+          barWidth={1}
         />
         <EventTracker />
-        <HoverState />
       </Chart>
     </Paper>
   );

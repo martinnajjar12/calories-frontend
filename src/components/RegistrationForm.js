@@ -88,7 +88,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
           required
         >
           <MenuItem className={commonClasses.darkText} value="male">Male</MenuItem>
-          <MenuItem className={commonClasses.darkText} value="femail">Female</MenuItem>
+          <MenuItem className={commonClasses.darkText} value="female">Female</MenuItem>
         </Select>
       </FormControl>
       <FormControl className={commonClasses.topMargin15}>

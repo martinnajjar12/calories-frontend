@@ -92,7 +92,7 @@ const NavigationBar = () => {
                 </Grid>
               </IconButton>
             </NavLink>
-            <NavLink exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/more">
+            <NavLink onClick={fetchProgressData} exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/more">
               <IconButton className={classes.whiteCol}>
                 <Grid container direction="column" alignItems="center">
                   <MoreHoriz />
