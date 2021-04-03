@@ -1,12 +1,12 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
+import Demo from './Chart';
 import Header from './Header';
 import NavigationBar from './NavigationBar';
 
 const Progress = () => (
   <>
     <Header title="Progress" />
-    <Typography color="textSecondary">Hello World</Typography>
+    <Demo />
     <NavigationBar />
   </>
 );
