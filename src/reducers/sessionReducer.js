@@ -1,5 +1,4 @@
 import {
-  FETCH_CALORIES_DATA,
   LOGIN,
   LOGOUT,
   SUBMIT_VALUES,
@@ -32,12 +31,6 @@ const sessionReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
-      };
-    case FETCH_CALORIES_DATA:
-      return {
-        ...state,
-        ...action.payload,
-        isLogged: true,
       };
     default:
       return state;
