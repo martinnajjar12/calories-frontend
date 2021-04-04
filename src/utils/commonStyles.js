@@ -67,6 +67,9 @@ const commonStyles = makeStyles({
   morePaperBg: {
     backgroundColor: '#eceded',
   },
+  whiteBackground: {
+    backgroundColor: '#fff',
+  },
 });
 
 export default commonStyles;
