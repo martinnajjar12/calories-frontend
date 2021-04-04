@@ -19,7 +19,7 @@ const More = () => {
   return chartData.length === 0 ? (
     <>
       <Header title="More" />
-      <h1>No data</h1>
+      <h1 className={commonClasses.darkText}>No data</h1>
       <NavigationBar />
     </>
   ) : (
