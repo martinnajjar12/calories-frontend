@@ -1,4 +1,5 @@
 import {
+  Container,
   CssBaseline,
   ThemeProvider,
   unstable_createMuiStrictModeTheme as createMuiTheme,
@@ -41,6 +42,15 @@ const theme = createMuiTheme({
       '"Segoe UI Symbol"',
     ].join(','),
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 600,
+      lg: 600,
+      xl: 600,
+    },
+  },
 });
 
 const App = () => {
@@ -50,15 +60,17 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Switch>
-          <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/" component={MemberPage} />
-          <MemberProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/login" component={LoginPage} />
-          <MemberProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/welcome" component={GuestPage} />
-          <MemberProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/registration" component={RegistrationPage} />
-          <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/meals" component={Meals} />
-          <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/progress" component={Progress} />
-          <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} path="/more" component={More} />
-        </Switch>
+        <Container>
+          <Switch>
+            <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/" component={MemberPage} />
+            <MemberProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/login" component={LoginPage} />
+            <MemberProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/welcome" component={GuestPage} />
+            <MemberProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/registration" component={RegistrationPage} />
+            <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/meals" component={Meals} />
+            <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/progress" component={Progress} />
+            <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} path="/more" component={More} />
+          </Switch>
+        </Container>
       </BrowserRouter>
       <CssBaseline />
     </ThemeProvider>

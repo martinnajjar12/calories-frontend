@@ -18,8 +18,11 @@ import fetchTodayData from '../actions/fetchTodayData';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
+    maxWidth: 600,
     top: 'auto',
     bottom: 0,
+    left: 'auto',
+    right: 'auto',
     backgroundColor: '#67899c',
   },
   fSize: {

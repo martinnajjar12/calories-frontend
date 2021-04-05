@@ -39,9 +39,6 @@ const commonStyles = makeStyles({
   topMargin30: {
     marginTop: 30,
   },
-  formControlWidth: {
-    minWidth: 174,
-  },
   whiteText: {
     color: '#fff',
   },
