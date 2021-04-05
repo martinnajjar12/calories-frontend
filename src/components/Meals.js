@@ -7,6 +7,9 @@ import FoodKind from './FoodKind';
 import Header from './Header';
 import NavigationBar from './NavigationBar';
 import carbohydrates from '../assets/images/carbohydrates.cms';
+import proteins from '../assets/images/proteins.png';
+import fats from '../assets/images/fats.jpg';
+import calories from '../assets/images/trackitCalories.jfif';
 import grabValues from '../utils/grabValues';
 
 const Meals = () => {
@@ -75,39 +78,39 @@ const Meals = () => {
     <div className={commonClasses.lightGreyBg}>
       <Header title="TrackIt" />
       <div className={commonClasses.whiteBackground}>
-        <Typography align="center" className={`${commonClasses.darkText} ${commonClasses.normalPadding}`}>current date</Typography>
+        <Typography align="center" className={`${commonClasses.darkText} ${commonClasses.fontWeightBold} ${commonClasses.normalPadding}`}>{new Date().toLocaleDateString()}</Typography>
       </div>
       <Grid className={`${commonClasses.whiteBackground} ${commonClasses.normalPadding}`} container justify="space-around" alignItems="center">
         <Grid item>
           <Grid container justify="center" alignItems="center" direction="column">
-            <CircularProgressWithLabel value={carbPercent} sign="G" />
+            <CircularProgressWithLabel value={carbPercent} />
             <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Carbohydrates</Typography>
           </Grid>
         </Grid>
         <Grid item>
           <Grid container justify="center" alignItems="center" direction="column">
-            <CircularProgressWithLabel value={proteinsPercent} sign="G" />
+            <CircularProgressWithLabel value={proteinsPercent} />
             <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Proteins</Typography>
           </Grid>
         </Grid>
         <Grid item>
           <Grid container justify="center" alignItems="center" direction="column">
-            <CircularProgressWithLabel value={fatsPercent} sign="G" />
+            <CircularProgressWithLabel value={fatsPercent} />
             <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Fats</Typography>
           </Grid>
         </Grid>
         <Grid item>
           <Grid container justify="center" alignItems="center" direction="column">
-            <CircularProgressWithLabel value={caloriesPercent} sign="C" />
+            <CircularProgressWithLabel value={caloriesPercent} />
             <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Calories</Typography>
           </Grid>
         </Grid>
       </Grid>
       <Grid container justify="center" alignItems="center">
-        <FoodKind name="Carb" image={carbohydrates} />
-        <FoodKind name="Carb" image={carbohydrates} />
-        <FoodKind name="Carb" image={carbohydrates} />
-        <FoodKind name="Carb" image={carbohydrates} />
+        <FoodKind name="Carbs" value={carbAmount} image={carbohydrates} />
+        <FoodKind name="Proteins" image={proteins} value={proteinsAmount} />
+        <FoodKind name="Fats" image={fats} value={fatsAmount} />
+        <FoodKind name="Calories" sign="C" image={calories} value={caloriesAmount} />
       </Grid>
       <NavigationBar />
     </div>
