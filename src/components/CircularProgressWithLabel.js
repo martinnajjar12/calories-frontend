@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import commonStyles from '../utils/commonStyles';
 
-const CircularProgressWithLabel = ({ value }) => {
+const CircularProgressWithLabel = ({ value, sign }) => {
   const commonClasses = commonStyles();
   return (
     <Box position="relative" display="inline-flex">
@@ -21,7 +21,7 @@ const CircularProgressWithLabel = ({ value }) => {
         justifyContent="center"
       >
         <Typography className={commonClasses.fontWeightBold} component="div" color="textSecondary">
-          {`${value}G`}
+          {`${value}${sign}`}
         </Typography>
       </Box>
     </Box>
@@ -30,6 +30,7 @@ const CircularProgressWithLabel = ({ value }) => {
 
 CircularProgressWithLabel.propTypes = {
   value: PropTypes.number.isRequired,
+  sign: PropTypes.string.isRequired,
 };
 
 export default CircularProgressWithLabel;

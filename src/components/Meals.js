@@ -78,10 +78,30 @@ const Meals = () => {
         <Typography align="center" className={`${commonClasses.darkText} ${commonClasses.normalPadding}`}>current date</Typography>
       </div>
       <Grid className={`${commonClasses.whiteBackground} ${commonClasses.normalPadding}`} container justify="space-around" alignItems="center">
-        <CircularProgressWithLabel value={carbPercent} />
-        <CircularProgressWithLabel value={proteinsPercent} />
-        <CircularProgressWithLabel value={fatsPercent} />
-        <CircularProgressWithLabel value={caloriesPercent} />
+        <Grid item>
+          <Grid container justify="center" alignItems="center" direction="column">
+            <CircularProgressWithLabel value={carbPercent} sign="G" />
+            <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Carbohydrates</Typography>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container justify="center" alignItems="center" direction="column">
+            <CircularProgressWithLabel value={proteinsPercent} sign="G" />
+            <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Proteins</Typography>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container justify="center" alignItems="center" direction="column">
+            <CircularProgressWithLabel value={fatsPercent} sign="G" />
+            <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Fats</Typography>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container justify="center" alignItems="center" direction="column">
+            <CircularProgressWithLabel value={caloriesPercent} sign="C" />
+            <Typography className={commonClasses.topMargin15} color="textSecondary" variant="subtitle2">Calories</Typography>
+          </Grid>
+        </Grid>
       </Grid>
       <Grid container justify="center" alignItems="center">
         <FoodKind name="Carb" image={carbohydrates} />
