@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/Header';
 import MemberPageContent from '../components/MemberPageContent';
@@ -64,7 +64,9 @@ const MemberPage = () => {
       <MemberPageContent submitHandler={handleSubmit} value={meal.Carbohydrates} changeHandler={changeHandler} name="Carbohydrates" image={carbohydrates} info={carbInfo} />
       <MemberPageContent submitHandler={handleSubmit} value={meal.Proteins} changeHandler={changeHandler} name="Proteins" image={proteins} info={proteinsInfo} />
       <MemberPageContent submitHandler={handleSubmit} value={meal.Fats} changeHandler={changeHandler} name="Fats" image={fats} info={fatsInfo} />
-      <Button type="submit" onClick={handleSubmit} color="primary" variant="contained" className={commonClasses.whiteText}>ADD MEAL</Button>
+      <Grid container justify="center" alignItems="center">
+        <Button type="submit" onClick={handleSubmit} size="large" color="primary" variant="contained" className={`${commonClasses.whiteText} ${commonClasses.topMargin30} ${commonClasses.bottomMargin50}`}>ADD MEAL</Button>
+      </Grid>
       <NavigationBar />
     </div>
   );
