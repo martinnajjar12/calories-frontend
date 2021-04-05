@@ -70,6 +70,9 @@ const commonStyles = makeStyles({
   whiteBackground: {
     backgroundColor: '#fff',
   },
+  margin15: {
+    margin: 15,
+  },
 });
 
 export default commonStyles;
