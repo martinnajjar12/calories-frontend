@@ -14,22 +14,22 @@ import NavigationBar from './NavigationBar';
 
 const More = () => {
   const commonClasses = commonStyles();
-  const chartData = useSelector(state => state.chartDataState);
+  const todayData = useSelector(state => state.todayDataState);
 
-  return chartData.length === 0 ? (
+  return todayData.length === 0 ? (
     <>
       <Header title="More" />
-      <h1 className={commonClasses.darkText}>No data</h1>
+      <h1 className={commonClasses.darkText}>Loading...</h1>
       <NavigationBar />
     </>
   ) : (
     <>
       <Header title="More" />
       <Paper elevation={0} className={`${commonClasses.normalPadding} ${commonClasses.displayFlex}`}>
-        <Avatar className={commonClasses.avatarPadding}>{chartData[0].user.name[0]}</Avatar>
+        <Avatar className={commonClasses.avatarPadding}>{todayData[0].user.name[0]}</Avatar>
         <div className={commonClasses.leftMargin15}>
-          <Typography color="textSecondary" component="h2" className={commonClasses.fontWeightBold}>{chartData[0].user.name}</Typography>
-          <Typography color="primary" variant="subtitle2">{chartData[0].user.gender}</Typography>
+          <Typography color="textSecondary" component="h2" className={commonClasses.fontWeightBold}>{todayData[0].user.name}</Typography>
+          <Typography color="primary" variant="subtitle2">{todayData[0].user.gender}</Typography>
         </div>
       </Paper>
       <Paper elevation={0} className={`${commonClasses.displayFlex} ${commonClasses.morePaperBg} ${commonClasses.normalPadding}`}>

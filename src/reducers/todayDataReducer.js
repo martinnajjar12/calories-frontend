@@ -1,12 +1,11 @@
-import { CHANGE_SESSION_DATA } from '../actionTypes';
+import { FETCH_TODAY_DATA } from '../actionTypes';
 
 const initialState = [];
 
 const toadyDataReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_SESSION_DATA:
+    case FETCH_TODAY_DATA:
       return [
-        ...state,
         ...action.payload,
       ];
 

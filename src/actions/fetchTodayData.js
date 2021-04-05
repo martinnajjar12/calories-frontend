@@ -35,7 +35,6 @@ const fetchTodayData = ({
   },
 }).then(response => {
   changeSessionData(response.headers);
-  console.log(response);
   dispatch(pureFetchTodayData(response.data));
 });
 
