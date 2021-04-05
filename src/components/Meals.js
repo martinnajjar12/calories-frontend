@@ -9,6 +9,7 @@ import carbohydrates from '../assets/images/carbohydrates.cms';
 
 const Meals = () => {
   const commonClasses = commonStyles();
+
   return (
     <div className={commonClasses.lightGreyBg}>
       <Header title="TrackIt" />

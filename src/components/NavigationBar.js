@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import commonStyles from '../utils/commonStyles';
 import fetchCaloriesData from '../actions/fetchCaloriesData';
+import fetchTodayData from '../actions/fetchTodayData';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -63,6 +64,13 @@ const NavigationBar = () => {
     expiry,
   }));
 
+  const fetchTrackItData = () => dispatch(fetchTodayData({
+    uid,
+    client,
+    accessToken,
+    expiry,
+  }));
+
   return (
     <>
       <AppBar position="fixed" className={classes.appBar}>
@@ -76,7 +84,7 @@ const NavigationBar = () => {
                 </Grid>
               </IconButton>
             </NavLink>
-            <NavLink exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/meals">
+            <NavLink onClick={fetchTrackItData} exact activeClassName={classes.activeBg} className={`${commonClasses.anchorText} ${commonClasses.flex1} ${commonClasses.centerText}`} to="/meals">
               <IconButton className={classes.whiteCol}>
                 <Grid container direction="column" alignItems="center">
                   <TrendingUp />

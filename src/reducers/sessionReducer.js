@@ -1,4 +1,5 @@
 import {
+  CHANGE_SESSION_DATA,
   LOGIN,
   LOGOUT,
   SUBMIT_VALUES,
@@ -28,6 +29,11 @@ const sessionReducer = (state = initialState, action) => {
         isLogged: false,
       };
     case SUBMIT_VALUES:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case CHANGE_SESSION_DATA:
       return {
         ...state,
         ...action.payload,
