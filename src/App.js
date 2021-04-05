@@ -10,7 +10,7 @@ import {
 import { useSelector } from 'react-redux';
 import GuestPage from './components/GuestPage';
 import LoginPage from './containers/LoginPage';
-import Meals from './components/Meals';
+import Meals from './containers/Meals';
 import MemberPage from './containers/MemberPage';
 import Progress from './components/Progress';
 import RegistrationPage from './containers/RegistrationPage';
