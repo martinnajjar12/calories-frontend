@@ -73,6 +73,9 @@ const commonStyles = makeStyles({
   margin15: {
     margin: 15,
   },
+  width80: {
+    width: '80%',
+  },
 });
 
 export default commonStyles;

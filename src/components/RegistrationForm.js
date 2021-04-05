@@ -2,13 +2,16 @@ import {
   Button,
   FormControl,
   FormHelperText,
+  Grid,
   Input,
   InputLabel,
   MenuItem,
   Select,
+  Typography,
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import commonStyles from '../utils/commonStyles';
 
 const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
@@ -16,7 +19,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
 
   return (
     <form className={`${commonClasses.centerVertically} ${commonClasses.topMargin50} ${commonClasses.bottomMargin50}`}>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="name">Name</InputLabel>
         <Input
           className={commonClasses.darkText}
@@ -28,7 +31,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
           required
         />
       </FormControl>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="email">Email</InputLabel>
         <Input
           className={commonClasses.darkText}
@@ -40,7 +43,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
           required
         />
       </FormControl>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="password">Password</InputLabel>
         <Input
           className={commonClasses.darkText}
@@ -52,7 +55,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
           required
         />
       </FormControl>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="passwordConfirmation">Password Confirmation</InputLabel>
         <Input
           className={commonClasses.darkText}
@@ -64,7 +67,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
           required
         />
       </FormControl>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="age">Age</InputLabel>
         <Input
           className={commonClasses.darkText}
@@ -77,7 +80,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
           required
         />
       </FormControl>
-      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.formControlWidth}`}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="gender">Gender</InputLabel>
         <Select
           className={commonClasses.darkText}
@@ -91,7 +94,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
           <MenuItem className={commonClasses.darkText} value="female">Female</MenuItem>
         </Select>
       </FormControl>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="height">Height</InputLabel>
         <Input
           className={commonClasses.darkText}
@@ -106,7 +109,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
         />
         <FormHelperText id="heightHelperText">Should be in CM</FormHelperText>
       </FormControl>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="weight">Weight</InputLabel>
         <Input
           inputProps={{ min: 35 }}
@@ -121,7 +124,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
         />
         <FormHelperText id="weightHelperText">Should be in KG</FormHelperText>
       </FormControl>
-      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.formControlWidth}`}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="activity">Activity</InputLabel>
         <Select
           className={commonClasses.darkText}
@@ -145,6 +148,10 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       >
         CREATE ACCOUNT
       </Button>
+      <Grid className={commonClasses.topMargin15} container alignItems="center" justify="center">
+        <Typography color="textSecondary">You already have an account?&nbsp;</Typography>
+        <Link className={commonClasses.anchorText} to="/login"><Typography color="primary">Login</Typography></Link>
+      </Grid>
     </form>
   );
 };

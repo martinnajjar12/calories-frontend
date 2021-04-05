@@ -13,7 +13,7 @@ const LoginForm = ({ submitHandler, changeHandler, state }) => {
 
   return (
     <form className={`${commonClasses.centerVertically} ${commonClasses.topMargin40} ${commonClasses.bottomMargin50}`}>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="email">Email</InputLabel>
         <Input
           className={commonClasses.darkText}
@@ -25,7 +25,7 @@ const LoginForm = ({ submitHandler, changeHandler, state }) => {
           required
         />
       </FormControl>
-      <FormControl className={commonClasses.topMargin15}>
+      <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="password">Password</InputLabel>
         <Input
           className={commonClasses.darkText}
