@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { SUBMIT_VALUES } from '../actionTypes';
 import saveToSessionStorage from '../utils/sessionStorage';
+import showAlert from './showAlert';
 
 const pureSubmitValues = data => {
   saveToSessionStorage(data, true);
@@ -58,12 +59,17 @@ const submitValues = ({
               expiry,
               measure: 'calories',
               value: caloriesValue,
-            }).then(() => dispatch(pureSubmitValues(firstResponse.headers)));
+            }).then(response => {
+              if (response.status === 200) {
+                dispatch(pureSubmitValues(firstResponse.headers));
+                dispatch(showAlert(response));
+              }
+            });
           }
         });
       }
     });
   }
-});
+}).catch(err => dispatch(showAlert(err)));
 
 export default submitValues;

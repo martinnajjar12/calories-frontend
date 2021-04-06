@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Grid } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import { Button, Grid, Snackbar } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
+import Alert from '@material-ui/lab/Alert';
 import Header from '../components/Header';
 import MemberPageContent from '../components/MemberPageContent';
 import NavigationBar from '../components/NavigationBar';
@@ -10,6 +11,7 @@ import fats from '../assets/images/fats.jpg';
 import commonStyles from '../utils/commonStyles';
 import submitValues from '../actions/submitValues';
 import getValidUser from '../utils/getValidUser';
+import closeAlert from '../actions/closeAlert';
 
 const carbInfo = 'Carbohydrates are found in a wide array of both healthy and unhealthy foods—bread, beans, milk, popcorn, potatoes, cookies, spaghetti, soft drinks, corn, and cherry pie. They also come in a variety of forms. The most common and abundant forms are sugars, fibers, and starches.';
 const proteinsInfo = 'You can get Proteins from lean meats (such as beef and lamb) and also from the poultry (such as chicken and ducks). Fish and seafood also contain a good amount of Protein as well as dairy products like milk, yoghurt, cheese... etc. Legumes and nuts also contain Protein.';
@@ -17,6 +19,7 @@ const fatsInfo = 'Fats can be found in different kinds of food such as Avocado, 
 
 const MemberPage = () => {
   const commonClasses = commonStyles();
+  const { bool, status } = useSelector(state => state.showAlert);
 
   const [meal, setMeal] = useState({
     Carbohydrates: '',
@@ -40,6 +43,7 @@ const MemberPage = () => {
       client,
       expiry,
     } = getValidUser();
+
     const info = {
       uid,
       client,
@@ -47,6 +51,7 @@ const MemberPage = () => {
       expiry,
       meal,
     };
+
     dispatch(submitValues(info));
   };
 
@@ -59,6 +64,15 @@ const MemberPage = () => {
       <Grid container justify="center" alignItems="center">
         <Button type="submit" onClick={handleSubmit} size="large" color="primary" variant="contained" className={`${commonClasses.whiteText} ${commonClasses.topMargin30} ${commonClasses.bottomMargin50}`}>ADD MEAL</Button>
       </Grid>
+      <Snackbar open={bool} anchorOrigin={{ horizontal: 'center', vertical: 'top' }} autoHideDuration={6000} onClose={() => dispatch(closeAlert())}>
+        <Alert elevation={6} variant="filled" onClose={() => dispatch(closeAlert())} severity={status}>
+          {
+          status === 'success'
+            ? 'Meal submitted successfully'
+            : 'Something went wrong! Please try again later'
+          }
+        </Alert>
+      </Snackbar>
       <NavigationBar />
     </div>
   );
