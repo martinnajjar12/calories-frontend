@@ -1,4 +1,10 @@
-import { Avatar, Paper, Typography } from '@material-ui/core';
+import {
+  Avatar,
+  CircularProgress,
+  Grid,
+  Paper,
+  Typography,
+} from '@material-ui/core';
 import {
   FilterTiltShift,
   Help,
@@ -19,7 +25,9 @@ const More = () => {
   return todayData.length === 0 ? (
     <>
       <Header title="More" />
-      <h1 className={commonClasses.darkText}>Loading...</h1>
+      <Grid className={commonClasses.fullHeight} container justify="center" alignItems="center">
+        <CircularProgress size={100} />
+      </Grid>
       <NavigationBar />
     </>
   ) : (

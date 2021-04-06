@@ -73,6 +73,9 @@ const commonStyles = makeStyles({
   width80: {
     width: '80%',
   },
+  fullHeight: {
+    height: '80vh',
+  },
 });
 
 export default commonStyles;

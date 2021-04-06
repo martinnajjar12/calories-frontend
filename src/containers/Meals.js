@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@material-ui/core';
+import { CircularProgress, Grid, Typography } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import commonStyles from '../utils/commonStyles';
@@ -114,7 +114,15 @@ const Meals = () => {
       </Grid>
       <NavigationBar />
     </div>
-  ) : (<h1>Loading...</h1>);
+  ) : (
+    <>
+      <Header title="TrackIt" />
+      <Grid className={commonClasses.fullHeight} container justify="center" alignItems="center">
+        <CircularProgress size={100} />
+      </Grid>
+      <NavigationBar />
+    </>
+  );
 };
 
 export default Meals;
