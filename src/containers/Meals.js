@@ -18,9 +18,12 @@ const Meals = () => {
   const [noData, setNoData] = useState(false);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setNoData(true);
     }, 4000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   let bmr;

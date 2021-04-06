@@ -17,9 +17,12 @@ const CustomChart = () => {
   const [noData, setNoData] = useState(false);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setNoData(true);
     }, 4000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return chartData.length === 0

@@ -24,9 +24,12 @@ const More = () => {
   const [noData, setNoData] = useState(false);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setNoData(true);
     }, 4000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return todayData.length === 0 ? (
