@@ -10,11 +10,12 @@ import {
   TrendingUp,
 } from '@material-ui/icons';
 import { Grid, Typography } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import commonStyles from '../utils/commonStyles';
 import fetchCaloriesData from '../actions/fetchCaloriesData';
 import fetchTodayData from '../actions/fetchTodayData';
+import getValidUser from '../utils/getValidUser';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -44,35 +45,35 @@ const NavigationBar = () => {
   const commonClasses = commonStyles();
   const dispatch = useDispatch();
 
-  let {
-    uid,
-    client,
-    accessToken,
-    expiry,
-  } = useSelector(state => state.sessionState);
+  const fetchProgressData = () => {
+    const {
+      uid,
+      client,
+      expiry,
+      accessToken,
+    } = getValidUser();
+    dispatch(fetchCaloriesData({
+      uid,
+      client,
+      accessToken,
+      expiry,
+    }));
+  };
 
-  const registrationState = useSelector(state => state.registrationState);
-
-  if (!accessToken) {
-    uid = registrationState.uid;
-    client = registrationState.client;
-    accessToken = registrationState.accessToken;
-    expiry = registrationState.expiry;
-  }
-
-  const fetchProgressData = () => dispatch(fetchCaloriesData({
-    uid,
-    client,
-    accessToken,
-    expiry,
-  }));
-
-  const fetchTrackItData = () => dispatch(fetchTodayData({
-    uid,
-    client,
-    accessToken,
-    expiry,
-  }));
+  const fetchTrackItData = () => {
+    const {
+      uid,
+      accessToken,
+      client,
+      expiry,
+    } = getValidUser();
+    dispatch(fetchTodayData({
+      uid,
+      client,
+      accessToken,
+      expiry,
+    }));
+  };
 
   return (
     <>

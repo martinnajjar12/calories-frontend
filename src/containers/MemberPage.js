@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Grid } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import MemberPageContent from '../components/MemberPageContent';
 import NavigationBar from '../components/NavigationBar';
@@ -9,28 +9,13 @@ import proteins from '../assets/images/proteins.png';
 import fats from '../assets/images/fats.jpg';
 import commonStyles from '../utils/commonStyles';
 import submitValues from '../actions/submitValues';
+import getValidUser from '../utils/getValidUser';
 
 const carbInfo = 'Carbohydrates are found in a wide array of both healthy and unhealthy foods—bread, beans, milk, popcorn, potatoes, cookies, spaghetti, soft drinks, corn, and cherry pie. They also come in a variety of forms. The most common and abundant forms are sugars, fibers, and starches.';
 const proteinsInfo = 'You can get Proteins from lean meats (such as beef and lamb) and also from the poultry (such as chicken and ducks). Fish and seafood also contain a good amount of Protein as well as dairy products like milk, yoghurt, cheese... etc. Legumes and nuts also contain Protein.';
 const fatsInfo = 'Fats can be found in different kinds of food such as Avocado, cheese and dark chocolate. Eggs and fatty fish also contain Fats. You can have fats also in coconuts and full fat yoghurt.';
 
 const MemberPage = () => {
-  let {
-    uid,
-    client,
-    accessToken,
-    expiry,
-  } = useSelector(state => state.sessionState);
-
-  const registrationState = useSelector(state => state.registrationState);
-
-  if (!accessToken) {
-    uid = registrationState.uid;
-    client = registrationState.client;
-    accessToken = registrationState.accessToken;
-    expiry = registrationState.expiry;
-  }
-
   const commonClasses = commonStyles();
 
   const [meal, setMeal] = useState({
@@ -48,15 +33,22 @@ const MemberPage = () => {
     });
   };
 
-  const info = {
-    client,
-    expiry,
-    uid,
-    accessToken,
-    meal,
+  const handleSubmit = () => {
+    const {
+      uid,
+      accessToken,
+      client,
+      expiry,
+    } = getValidUser();
+    const info = {
+      uid,
+      client,
+      accessToken,
+      expiry,
+      meal,
+    };
+    dispatch(submitValues(info));
   };
-
-  const handleSubmit = () => dispatch(submitValues(info));
 
   return (
     <div className={commonClasses.bottomMargin70}>

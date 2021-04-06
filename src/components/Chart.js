@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import {
   Chart,
@@ -14,11 +14,22 @@ import commonStyles from '../utils/commonStyles';
 const CustomChart = () => {
   const chartData = useSelector(state => state.chartDataState);
   const commonClasses = commonStyles();
+  const [noData, setNoData] = useState(false);
+
+  useEffect(() => {
+    setInterval(() => {
+      setNoData(true);
+    }, 4000);
+  }, []);
 
   return chartData.length === 0
     ? (
       <Grid className={commonClasses.fullHeight} container justify="center" alignItems="center">
-        <CircularProgress size={100} />
+        {
+          noData
+            ? <h1 className={commonClasses.darkText}>No Data</h1>
+            : <CircularProgress size={100} />
+        }
       </Grid>
     ) : (
       <Paper>

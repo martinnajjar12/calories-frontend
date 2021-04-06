@@ -1,5 +1,5 @@
 import { CircularProgress, Grid, Typography } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import commonStyles from '../utils/commonStyles';
 import CircularProgressWithLabel from '../components/CircularProgressWithLabel';
@@ -15,6 +15,13 @@ import grabValues from '../utils/grabValues';
 const Meals = () => {
   const commonClasses = commonStyles();
   const todayData = useSelector(state => state.todayDataState);
+  const [noData, setNoData] = useState(false);
+
+  useEffect(() => {
+    setInterval(() => {
+      setNoData(true);
+    }, 4000);
+  }, []);
 
   let bmr;
   let activity;
@@ -117,9 +124,17 @@ const Meals = () => {
   ) : (
     <>
       <Header title="TrackIt" />
-      <Grid className={commonClasses.fullHeight} container justify="center" alignItems="center">
-        <CircularProgress size={100} />
-      </Grid>
+      {
+        noData ? (
+          <Grid className={commonClasses.fullHeight} container justify="center" alignItems="center">
+            <h1 className={commonClasses.darkText}>No Data</h1>
+          </Grid>
+        ) : (
+          <Grid className={commonClasses.fullHeight} container justify="center" alignItems="center">
+            <CircularProgress size={100} />
+          </Grid>
+        )
+      }
       <NavigationBar />
     </>
   );

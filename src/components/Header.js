@@ -8,8 +8,9 @@ import {
 import React from 'react';
 import PropTypes from 'prop-types';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import logout from '../actions/logout';
+import getValidUser from '../utils/getValidUser';
 
 const useStyles = makeStyles({
   root: {
@@ -36,15 +37,11 @@ const useStyles = makeStyles({
 const Header = ({ title, isLogged }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  let { uid, client, accessToken } = useSelector(state => state.sessionState);
 
-  const registrationState = useSelector(state => state.registrationState);
-
-  if (!accessToken) {
-    uid = registrationState.uid;
-    client = registrationState.client;
-    accessToken = registrationState.accessToken;
-  }
+  const logoutHandler = () => {
+    const { uid, accessToken, client } = getValidUser();
+    dispatch(logout(uid, accessToken, client));
+  };
 
   return (
     <AppBar color="primary" position="sticky">
@@ -53,7 +50,7 @@ const Header = ({ title, isLogged }) => {
         <Typography className={classes.fontStyles} component="h1" color="textPrimary" align="center">{title}</Typography>
         <div className={classes.iconWrapper}>
           { isLogged ? (
-            <IconButton className={classes.marginLeftAuto} edge="end" onClick={() => dispatch(logout(uid, accessToken, client))}>
+            <IconButton className={classes.marginLeftAuto} edge="end" onClick={logoutHandler}>
               <ExitToAppIcon />
             </IconButton>
           ) : ''}

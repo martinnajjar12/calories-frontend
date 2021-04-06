@@ -12,7 +12,7 @@ import {
   Person,
   Settings,
 } from '@material-ui/icons';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import commonStyles from '../utils/commonStyles';
 import Header from './Header';
@@ -21,12 +21,23 @@ import NavigationBar from './NavigationBar';
 const More = () => {
   const commonClasses = commonStyles();
   const todayData = useSelector(state => state.todayDataState);
+  const [noData, setNoData] = useState(false);
+
+  useEffect(() => {
+    setInterval(() => {
+      setNoData(true);
+    }, 4000);
+  }, []);
 
   return todayData.length === 0 ? (
     <>
       <Header title="More" />
       <Grid className={commonClasses.fullHeight} container justify="center" alignItems="center">
-        <CircularProgress size={100} />
+        {
+          noData
+            ? <h1 className={commonClasses.darkText}>No Data</h1>
+            : <CircularProgress size={100} />
+        }
       </Grid>
       <NavigationBar />
     </>
