@@ -25,11 +25,9 @@ const logout = (uid, accessToken, client) => dispatch => axios.delete('http://lo
     'access-token': accessToken,
   },
 })
-  .then(resp => {
-    if (resp.status === 200) {
-      dispatch(pureLogout());
-      dispatch(deleteRegistrationSession());
-    }
+  .then(() => {
+    dispatch(pureLogout());
+    dispatch(deleteRegistrationSession());
   });
 
 export default logout;

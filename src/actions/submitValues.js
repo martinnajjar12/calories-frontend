@@ -1,21 +1,5 @@
 import axios from 'axios';
-import { SUBMIT_VALUES } from '../actionTypes';
-import saveToSessionStorage from '../utils/sessionStorage';
 import showAlert from './showAlert';
-
-const pureSubmitValues = data => {
-  saveToSessionStorage(data, true);
-  return ({
-    type: SUBMIT_VALUES,
-    payload: {
-      uid: data.uid,
-      accessToken: data['access-token'],
-      tokenType: data['token-type'],
-      expiry: data.expiry,
-      client: data.client,
-    },
-  });
-};
 
 const submitValues = ({
   uid,
@@ -32,7 +16,6 @@ const submitValues = ({
   value: meal.Carbohydrates,
 }).then(response => {
   if (response.status === 200) {
-    const firstResponse = response;
     axios.post('http://localhost:3000/api/v1/measurements/create', {
       uid,
       'access-token': accessToken,
@@ -60,10 +43,7 @@ const submitValues = ({
               measure: 'calories',
               value: caloriesValue,
             }).then(response => {
-              if (response.status === 200) {
-                dispatch(pureSubmitValues(firstResponse.headers));
-                dispatch(showAlert(response));
-              }
+              dispatch(showAlert(response));
             });
           }
         });

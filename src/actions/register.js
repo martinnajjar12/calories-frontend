@@ -18,9 +18,7 @@ const pureRegister = data => {
 
 const register = info => dispatch => axios.post('http://localhost:3000/auth', info)
   .then(response => {
-    if (response.status === 200) {
-      dispatch(pureRegister(response.headers));
-    }
+    dispatch(pureRegister(response.headers));
   });
 
 export default register;

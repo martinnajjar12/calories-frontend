@@ -1,8 +1,6 @@
 import {
-  CHANGE_SESSION_DATA,
   LOGIN,
   LOGOUT,
-  SUBMIT_VALUES,
 } from '../actionTypes';
 
 const initialState = {
@@ -27,16 +25,6 @@ const sessionReducer = (state = initialState, action) => {
         ...state,
         ...action.payload,
         isLogged: false,
-      };
-    case SUBMIT_VALUES:
-      return {
-        ...state,
-        ...action.payload,
-      };
-    case CHANGE_SESSION_DATA:
-      return {
-        ...state,
-        ...action.payload,
       };
     default:
       return state;

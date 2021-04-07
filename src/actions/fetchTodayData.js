@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { FETCH_TODAY_DATA } from '../actionTypes';
-import changeSessionData from './changeSessionData';
 
 const pureFetchTodayData = data => ({
   type: FETCH_TODAY_DATA,
@@ -20,9 +19,6 @@ const fetchTodayData = ({
     expiry,
   },
 }).then(response => {
-  if (response.headers['access-token'] !== '') {
-    changeSessionData(response.headers);
-  }
   dispatch(pureFetchTodayData(response.data));
 });
 

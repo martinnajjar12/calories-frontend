@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { FETCH_CALORIES_DATA } from '../actionTypes';
-import changeSessionData from './changeSessionData';
 
 const pureFetchCaloriesData = data => ({
   type: FETCH_CALORIES_DATA,
@@ -20,9 +19,6 @@ const fetchCaloriesData = ({
     expiry,
   },
 }).then(response => {
-  if (response.headers['access-token'] !== '') {
-    changeSessionData(response.headers);
-  }
   dispatch(pureFetchCaloriesData(response.data));
 });
 
