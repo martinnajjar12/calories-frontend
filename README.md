@@ -4,7 +4,7 @@
 
 > User facing program to post and fetch data from and API (You can find the backend repo [here](https://github.com/martinnajjar12/calories-backend/)). You can use this app to check how many calories have taken each day.
 
-![screenshot](./desktop_screenshot.png)
+![screenshot](./src/assets/images/screenshot.jpg)
 
 <p align="center">Screenshot</p>
 
@@ -22,6 +22,16 @@
 - Jest
 - redux-mock-store
 - moxios
+
+## Features
+
+- User can login/logout/register by a token based authentication
+- User can't access the app without loging in
+- User can submit the amounts of Carbohydrates, Proteins and Fats
+- The database will calculate how much calories has the user eaten based on the amounts of the ingredients above
+- User will have a percentage progress to show him how much calories he can have today in order to lose weight
+- User is presented with a page that renders a chart to see the amounts of calories he had in the last seven days
+
 
 ## Live Demo
 
