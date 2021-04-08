@@ -107,6 +107,9 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - App idea by me 😉
+- [Calculator.net](https://www.calculator.net/calorie-calculator.html?ctype=metric)
+- [Healthline](https://www.healthline.com/health/what-is-basal-metabolic-rate#How-many-calories-you-need-everyday-)
+- [My Body My Chicken](https://mybodymykitchen.com/calculate-your-macronutrients-protein-fats-carbs/)
 - [Designed by Gregoire Vella](https://www.behance.net/gregoirevella)
 - [Mockup psd created by rawpixel.com - www.freepik.com](https://www.freepik.com/psd/mockup)
 
