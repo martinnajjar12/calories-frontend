@@ -32,6 +32,10 @@
 - User will have a percentage progress to show him how much calories he can have today in order to lose weight
 - User is presented with a page that renders a chart to see the amounts of calories he had in the last seven days
 
+**Email and password to check the app:**
+Email: martin@martinnajjar.tech
+password: 123456
+
 
 ## Live Demo
 
