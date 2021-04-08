@@ -15,7 +15,7 @@ const pureLogout = () => ({
   payload: nullSessionStorage,
 });
 
-const logout = (uid, accessToken, client) => dispatch => axios.delete('http://localhost:3000/auth/sign_out', {
+const logout = (uid, accessToken, client) => dispatch => axios.delete('https://caloriesapi.herokuapp.com/auth/sign_out', {
   headers: {
     uid,
     client,

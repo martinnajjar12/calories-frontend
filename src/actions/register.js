@@ -12,7 +12,7 @@ const pureRegister = data => ({
   },
 });
 
-const register = info => dispatch => axios.post('http://localhost:3000/auth', info)
+const register = info => dispatch => axios.post('https://caloriesapi.herokuapp.com/auth', info)
   .then(response => dispatch(pureRegister(response.headers)));
 
 export default register;

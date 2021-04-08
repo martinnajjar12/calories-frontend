@@ -11,7 +11,7 @@ const fetchCaloriesData = ({
   uid,
   expiry,
   client,
-}) => dispatch => axios.get('http://localhost:3000/api/v1/calories', {
+}) => dispatch => axios.get('https://caloriesapi.herokuapp.com/api/v1/calories', {
   headers: {
     'access-token': accessToken,
     uid,

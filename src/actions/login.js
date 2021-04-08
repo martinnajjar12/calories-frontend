@@ -12,7 +12,7 @@ const pureLogin = data => ({
   },
 });
 
-const login = info => dispatch => axios.post('http://localhost:3000/auth/sign_in', info)
+const login = info => dispatch => axios.post('https://caloriesapi.herokuapp.com/auth/sign_in', info)
   .then(response => dispatch(pureLogin(response.headers)));
 
 export default login;

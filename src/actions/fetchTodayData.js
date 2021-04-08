@@ -11,7 +11,7 @@ const fetchTodayData = ({
   uid,
   client,
   expiry,
-}) => dispatch => axios.get('http://localhost:3000/api/v1/measures', {
+}) => dispatch => axios.get('https://caloriesapi.herokuapp.com/api/v1/measures', {
   headers: {
     'access-token': accessToken,
     uid,

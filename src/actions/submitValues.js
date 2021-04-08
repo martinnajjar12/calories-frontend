@@ -7,7 +7,7 @@ const submitValues = ({
   expiry,
   client,
   meal,
-}) => dispatch => axios.post('http://localhost:3000/api/v1/measurements/create', {
+}) => dispatch => axios.post('https://caloriesapi.herokuapp.com/api/v1/measurements/create', {
   uid,
   'access-token': accessToken,
   client,
@@ -16,7 +16,7 @@ const submitValues = ({
   value: meal.Carbohydrates,
 }).then(response => {
   if (response.status === 200) {
-    axios.post('http://localhost:3000/api/v1/measurements/create', {
+    axios.post('https://caloriesapi.herokuapp.com/api/v1/measurements/create', {
       uid,
       'access-token': accessToken,
       client,
@@ -25,7 +25,7 @@ const submitValues = ({
       value: meal.Proteins,
     }).then(response => {
       if (response.status === 200) {
-        axios.post('http://localhost:3000/api/v1/measurements/create', {
+        axios.post('https://caloriesapi.herokuapp.com/api/v1/measurements/create', {
           uid,
           'access-token': accessToken,
           client,
@@ -35,7 +35,7 @@ const submitValues = ({
         }).then(response => {
           if (response.status === 200) {
             const caloriesValue = (meal.Fats * 9) + (meal.Carbohydrates * 4) + (meal.Proteins * 4);
-            axios.post('http://localhost:3000/api/v1/measurements/create', {
+            axios.post('https://caloriesapi.herokuapp.com/api/v1/measurements/create', {
               uid,
               'access-token': accessToken,
               client,
