@@ -60,7 +60,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Container>
+        <Container style={{ padding: 0 }}>
           <Switch>
             <GuestProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/" component={MemberPage} />
             <MemberProtectedRoute isRegisteredAndLogged={isRegisteredAndLogged} isLogged={isLogged} exact path="/login" component={LoginPage} />
