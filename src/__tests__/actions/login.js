@@ -14,12 +14,8 @@ const userInfo = {
 };
 
 describe('fetchTodayData action', () => {
-  beforeEach(() => {
-    moxios.install();
-  });
-  afterEach(() => {
-    moxios.uninstall();
-  });
+  beforeEach(() => moxios.install());
+  afterEach(() => moxios.uninstall());
 
   it('should return an object when login successfully', () => {
     moxios.stubOnce('POST', url, {

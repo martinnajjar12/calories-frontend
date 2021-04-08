@@ -16,12 +16,8 @@ const userInfo = {
 };
 
 describe('fetchTodayData action', () => {
-  beforeEach(() => {
-    moxios.install();
-  });
-  afterEach(() => {
-    moxios.uninstall();
-  });
+  beforeEach(() => moxios.install());
+  afterEach(() => moxios.uninstall());
 
   it('should return an object when fetching successfully', () => {
     moxios.stubOnce('GET', url, {
