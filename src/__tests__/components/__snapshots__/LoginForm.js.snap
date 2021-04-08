@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm component should match snapshot 1`] = `
+<form
+  className="makeStyles-centerVertically-6 makeStyles-topMargin40-7 makeStyles-bottomMargin50-8"
+>
+  <div
+    className="MuiFormControl-root makeStyles-topMargin15-10 makeStyles-width80-22"
+  >
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+      data-shrink={false}
+      htmlFor="email"
+    >
+      Email
+    </label>
+    <div
+      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-darkText-3 MuiInputBase-formControl MuiInput-formControl"
+      onClick={[Function]}
+      required={true}
+    >
+      <input
+        aria-invalid={false}
+        className="MuiInputBase-input MuiInput-input"
+        disabled={false}
+        id="email"
+        name="email"
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiFormControl-root makeStyles-topMargin15-10 makeStyles-width80-22"
+  >
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+      data-shrink={false}
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <div
+      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-darkText-3 MuiInputBase-formControl MuiInput-formControl"
+      onClick={[Function]}
+      required={true}
+    >
+      <input
+        aria-invalid={false}
+        className="MuiInputBase-input MuiInput-input"
+        disabled={false}
+        id="password"
+        name="password"
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+  </div>
+  <button
+    className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-topMargin30-11 makeStyles-whiteText-12 MuiButton-containedPrimary"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="submit"
+  >
+    <span
+      className="MuiButton-label"
+    >
+      LOGIN
+    </span>
+  </button>
+</form>
+`;
