@@ -21,7 +21,7 @@ describe('fetchTodayData action', () => {
     moxios.uninstall();
   });
 
-  it('should return an object when fetching successfully', () => {
+  it('should return an object when login successfully', () => {
     moxios.stubOnce('POST', url, {
       status: 200,
       headers: {
@@ -33,13 +33,7 @@ describe('fetchTodayData action', () => {
       },
     });
 
-    const store = mockStore({
-      'access-token': 'fskl24klrw',
-      'token-type': 'Bearer',
-      client: 'flkuf22khf9',
-      expiry: '234838943',
-      uid: 'martin@microverse.org',
-    });
+    const store = mockStore({});
 
     return store.dispatch(login(userInfo)).then(() => {
       expect(store.getActions()).toEqual([{
