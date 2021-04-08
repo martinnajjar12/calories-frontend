@@ -14,6 +14,7 @@ import commonStyles from '../utils/commonStyles';
 
 const useStyles = makeStyles({
   root: {
+    color: 'black',
     '& input': {
       color: 'black',
     },
