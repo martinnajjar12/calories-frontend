@@ -14,6 +14,11 @@ import commonStyles from '../utils/commonStyles';
 
 const useStyles = makeStyles({
   root: {
+    '& input': {
+      color: 'black',
+    },
+  },
+  cardRoot: {
     width: '90%',
     maxWidth: 500,
     boxShadow: 'none',
@@ -37,7 +42,7 @@ const MemberPageContent = ({
   const classes = useStyles();
   const commonClasses = commonStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={classes.cardRoot}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -55,7 +60,7 @@ const MemberPageContent = ({
       <CardActions className={classes.cardActionRoot}>
         <TextField
           onChange={e => changeHandler(name, e.target.value)}
-          inputProps={{ min: 0, className: commonClasses.darkText }}
+          inputProps={{ min: 0, className: `${commonClasses.darkText} ${classes.root}` }}
           fullWidth
           value={value}
           name={name}

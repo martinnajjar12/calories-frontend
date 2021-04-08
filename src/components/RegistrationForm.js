@@ -5,6 +5,7 @@ import {
   Grid,
   Input,
   InputLabel,
+  makeStyles,
   MenuItem,
   Select,
   Typography,
@@ -14,15 +15,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import commonStyles from '../utils/commonStyles';
 
+const useStyles = makeStyles({
+  root: {
+    '& input': {
+      color: 'black',
+    },
+  },
+});
+
 const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
   const commonClasses = commonStyles();
+  const classes = useStyles();
 
   return (
     <form className={`${commonClasses.centerVertically} ${commonClasses.topMargin50} ${commonClasses.bottomMargin50}`}>
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="name">Name</InputLabel>
         <Input
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           value={state.name}
           name="name"
           onChange={e => handleChange(e)}
@@ -34,7 +44,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="email">Email</InputLabel>
         <Input
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           value={state.email}
           name="email"
           onChange={e => handleChange(e)}
@@ -46,7 +56,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="password">Password</InputLabel>
         <Input
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           value={state.password}
           name="password"
           onChange={e => handleChange(e)}
@@ -58,7 +68,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="passwordConfirmation">Password Confirmation</InputLabel>
         <Input
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           value={state.passwordConfirmation}
           name="passwordConfirmation"
           onChange={e => handleChange(e)}
@@ -70,7 +80,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="age">Age</InputLabel>
         <Input
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           value={state.age}
           name="age"
           onChange={e => handleChange(e)}
@@ -97,7 +107,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="height">Height</InputLabel>
         <Input
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           value={state.height}
           name="height"
           inputProps={{ min: 40 }}
@@ -113,7 +123,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
         <InputLabel htmlFor="weight">Weight</InputLabel>
         <Input
           inputProps={{ min: 35 }}
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           value={state.weight}
           name="weight"
           onChange={e => handleChange(e)}
