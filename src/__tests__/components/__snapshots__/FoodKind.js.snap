@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FoodKind component should match snapshot 1`] = `
+<div
+  className="MuiGrid-root makeStyles-leftMargin15-20 makeStyles-topMargin15-12 makeStyles-normalPadding-3 makeStyles-whiteBackground-22 MuiGrid-item MuiGrid-grid-xs-5"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
+  >
+    <div
+      className="MuiGrid-root makeStyles-maxWidth50-2 MuiGrid-item MuiGrid-grid-xs-5"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+      >
+        <img
+          alt="carbohydrates"
+          className="makeStyles-autoSize-1"
+          src="sdkfjshfau"
+        />
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root makeStyles-darkText-5 MuiGrid-item MuiGrid-grid-xs-5"
+    >
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
+      >
+        carbohydrates
+      </h6>
+      <p
+        className="MuiTypography-root makeStyles-fontWeightBold-18 MuiTypography-body1 MuiTypography-colorTextSecondary"
+      >
+        25 G
+      </p>
+    </div>
+  </div>
+</div>
+`;
