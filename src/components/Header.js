@@ -8,9 +8,8 @@ import {
 import React from 'react';
 import PropTypes from 'prop-types';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import logout from '../actions/logout';
-import getValidUser from '../utils/getValidUser';
 
 const useStyles = makeStyles({
   root: {
@@ -37,11 +36,21 @@ const useStyles = makeStyles({
 const Header = ({ title, isLogged }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  let {
+    uid,
+    client,
+    accessToken,
+  } = useSelector(state => state.sessionState);
 
-  const logoutHandler = () => {
-    const { uid, accessToken, client } = getValidUser();
-    dispatch(logout(uid, accessToken, client));
-  };
+  const registrationState = useSelector(state => state.registrationState);
+
+  if (!accessToken) {
+    uid = registrationState.uid;
+    client = registrationState.client;
+    accessToken = registrationState.accessToken;
+  }
+
+  const logoutHandler = () => dispatch(logout(uid, accessToken, client));
 
   return (
     <AppBar color="primary" position="sticky">

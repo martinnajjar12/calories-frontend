@@ -18,8 +18,6 @@ const fetchTodayData = ({
     client,
     expiry,
   },
-}).then(response => {
-  dispatch(pureFetchTodayData(response.data));
-});
+}).then(response => dispatch(pureFetchTodayData(response.data)));
 
 export default fetchTodayData;

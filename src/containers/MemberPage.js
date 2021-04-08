@@ -10,7 +10,6 @@ import proteins from '../assets/images/proteins.png';
 import fats from '../assets/images/fats.jpg';
 import commonStyles from '../utils/commonStyles';
 import submitValues from '../actions/submitValues';
-import getValidUser from '../utils/getValidUser';
 import closeAlert from '../actions/closeAlert';
 
 const carbInfo = 'Carbohydrates are found in a wide array of both healthy and unhealthy foods—bread, beans, milk, popcorn, potatoes, cookies, spaghetti, soft drinks, corn, and cherry pie. They also come in a variety of forms. The most common and abundant forms are sugars, fibers, and starches.';
@@ -20,6 +19,21 @@ const fatsInfo = 'Fats can be found in different kinds of food such as Avocado, 
 const MemberPage = () => {
   const commonClasses = commonStyles();
   const { bool, status } = useSelector(state => state.showAlert);
+  let {
+    uid,
+    client,
+    accessToken,
+    expiry,
+  } = useSelector(state => state.sessionState);
+
+  const registrationState = useSelector(state => state.registrationState);
+
+  if (!accessToken) {
+    uid = registrationState.uid;
+    client = registrationState.client;
+    accessToken = registrationState.accessToken;
+    expiry = registrationState.expiry;
+  }
 
   const [meal, setMeal] = useState({
     Carbohydrates: '',
@@ -37,13 +51,6 @@ const MemberPage = () => {
   };
 
   const handleSubmit = () => {
-    const {
-      uid,
-      accessToken,
-      client,
-      expiry,
-    } = getValidUser();
-
     const info = {
       uid,
       client,

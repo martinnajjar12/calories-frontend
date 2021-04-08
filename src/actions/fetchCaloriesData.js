@@ -18,8 +18,6 @@ const fetchCaloriesData = ({
     client,
     expiry,
   },
-}).then(response => {
-  dispatch(pureFetchCaloriesData(response.data));
-});
+}).then(response => dispatch(pureFetchCaloriesData(response.data)));
 
 export default fetchCaloriesData;

@@ -10,13 +10,10 @@ const nullSessionStorage = {
   tokenType: null,
 };
 
-const pureLogout = () => {
-  sessionStorage.clear();
-  return ({
-    type: LOGOUT,
-    payload: nullSessionStorage,
-  });
-};
+const pureLogout = () => ({
+  type: LOGOUT,
+  payload: nullSessionStorage,
+});
 
 const logout = (uid, accessToken, client) => dispatch => axios.delete('http://localhost:3000/auth/sign_out', {
   headers: {

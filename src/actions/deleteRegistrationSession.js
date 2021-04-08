@@ -8,12 +8,9 @@ const nullRegistrationStorage = {
   tokenType: null,
 };
 
-const deleteRegistrationSession = () => {
-  sessionStorage.clear();
-  return {
-    type: DELETE_REGISTRATION_SESSION,
-    payload: nullRegistrationStorage,
-  };
-};
+const deleteRegistrationSession = () => ({
+  type: DELETE_REGISTRATION_SESSION,
+  payload: nullRegistrationStorage,
+});
 
 export default deleteRegistrationSession;
