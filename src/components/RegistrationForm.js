@@ -17,6 +17,7 @@ import commonStyles from '../utils/commonStyles';
 
 const useStyles = makeStyles({
   root: {
+    color: 'black',
     '& input': {
       color: 'black',
     },
@@ -93,7 +94,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="gender">Gender</InputLabel>
         <Select
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           onChange={e => handleChange(e)}
           labelId="gender"
           value={state.gender}
@@ -137,7 +138,7 @@ const RegistrationForm = ({ state, handleChange, handleSubmit }) => {
       <FormControl className={`${commonClasses.topMargin15} ${commonClasses.width80}`}>
         <InputLabel htmlFor="activity">Activity</InputLabel>
         <Select
-          className={commonClasses.darkText}
+          className={`${commonClasses.darkText} ${classes.root}`}
           onChange={e => handleChange(e)}
           labelId="activity"
           value={state.activity}
