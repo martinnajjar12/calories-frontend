@@ -5,7 +5,7 @@ exports[`CircularProgressWithLabel should match snapshot 1`] = `
   className="MuiBox-root MuiBox-root-24"
 >
   <div
-    aria-valuenow={0}
+    aria-valuenow={75}
     className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-determinate"
     role="progressbar"
     style={
@@ -30,7 +30,7 @@ exports[`CircularProgressWithLabel should match snapshot 1`] = `
         style={
           Object {
             "strokeDasharray": "126.920",
-            "strokeDashoffset": "126.920px",
+            "strokeDashoffset": "31.730px",
           }
         }
       />
@@ -41,7 +41,9 @@ exports[`CircularProgressWithLabel should match snapshot 1`] = `
   >
     <div
       className="MuiTypography-root makeStyles-fontWeightBold-16 MuiTypography-body1 MuiTypography-colorTextSecondary"
-    />
+    >
+      75
+    </div>
   </div>
 </div>
 `;

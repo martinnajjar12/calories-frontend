@@ -3,7 +3,7 @@ import CircularProgressWithLabel from '../../components/CircularProgressWithLabe
 
 describe('CircularProgressWithLabel', () => {
   it('should match snapshot', () => {
-    const tree = renderer.create(<CircularProgressWithLabel />).toJSON();
+    const tree = renderer.create(<CircularProgressWithLabel value={75} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
