@@ -11,6 +11,7 @@ import fats from '../assets/images/fats.jpg';
 import commonStyles from '../utils/commonStyles';
 import submitValues from '../actions/submitValues';
 import closeAlert from '../actions/closeAlert';
+import showAlert from '../actions/showAlert';
 
 const carbInfo = 'Carbohydrates are found in a wide array of both healthy and unhealthy foods—bread, beans, milk, popcorn, potatoes, cookies, spaghetti, soft drinks, corn, and cherry pie. They also come in a variety of forms. The most common and abundant forms are sugars, fibers, and starches.';
 const proteinsInfo = 'You can get Proteins from lean meats (such as beef and lamb) and also from the poultry (such as chicken and ducks). Fish and seafood also contain a good amount of Protein as well as dairy products like milk, yoghurt, cheese... etc. Legumes and nuts also contain Protein.';
@@ -59,7 +60,11 @@ const MemberPage = () => {
       meal,
     };
 
-    dispatch(submitValues(info));
+    if (meal.Fats && meal.Carbohydrates && meal.Proteins) {
+      dispatch(submitValues(info));
+    } else {
+      dispatch(showAlert({ status: 422 }));
+    }
   };
 
   return (
@@ -71,7 +76,7 @@ const MemberPage = () => {
       <Grid container justify="center" alignItems="center">
         <Button type="submit" onClick={handleSubmit} size="large" color="primary" variant="contained" className={`${commonClasses.whiteText} ${commonClasses.topMargin30} ${commonClasses.bottomMargin50}`}>ADD MEAL</Button>
       </Grid>
-      <Snackbar open={bool} anchorOrigin={{ horizontal: 'center', vertical: 'top' }} autoHideDuration={6000} onClose={() => dispatch(closeAlert())}>
+      <Snackbar open={bool} anchorOrigin={{ horizontal: 'center', vertical: 'top' }} onClose={() => dispatch(closeAlert())}>
         <Alert elevation={6} variant="filled" onClose={() => dispatch(closeAlert())} severity={status}>
           {
           status === 'success'

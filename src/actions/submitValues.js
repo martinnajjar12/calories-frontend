@@ -15,7 +15,7 @@ const submitValues = ({
   measure: 'carbohydrates',
   value: meal.Carbohydrates,
 }).then(response => {
-  if (response.status === 200) {
+  if (response.status === 201) {
     axios.post('https://caloriesapi.herokuapp.com/api/v1/measurements/create', {
       uid,
       'access-token': accessToken,
@@ -24,7 +24,7 @@ const submitValues = ({
       measure: 'proteins',
       value: meal.Proteins,
     }).then(response => {
-      if (response.status === 200) {
+      if (response.status === 201) {
         axios.post('https://caloriesapi.herokuapp.com/api/v1/measurements/create', {
           uid,
           'access-token': accessToken,
@@ -33,7 +33,7 @@ const submitValues = ({
           measure: 'fats',
           value: meal.Fats,
         }).then(response => {
-          if (response.status === 200) {
+          if (response.status === 201) {
             const caloriesValue = (meal.Fats * 9) + (meal.Carbohydrates * 4) + (meal.Proteins * 4);
             axios.post('https://caloriesapi.herokuapp.com/api/v1/measurements/create', {
               uid,

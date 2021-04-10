@@ -10,7 +10,7 @@ const showAlertReducer = (state = initialState, action) => {
     case SHOW_ALERT:
       return {
         bool: true,
-        status: action.payload === 200 ? 'success' : 'error',
+        status: action.payload === 201 ? 'success' : 'error',
       };
     case CLOSE_ALERT:
       return {
