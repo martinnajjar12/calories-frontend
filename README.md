@@ -82,6 +82,8 @@ In order to open it in your browser, you need to dispatch the following command:
   npm start
 ```
 
+**Note:** You will not be able to interact with the server because of CORS (Cross-Origin Resource Sharing) restriction.
+
 ### Run tests
 
 To test the application please run this command:
