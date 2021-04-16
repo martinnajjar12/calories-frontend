@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { REGISTER } from '../actionTypes';
+import axiosHelper from '../utils/axiosHelper';
 
 const pureRegister = data => ({
   type: REGISTER,
@@ -12,7 +12,7 @@ const pureRegister = data => ({
   },
 });
 
-const register = info => dispatch => axios.post('https://caloriesapi.herokuapp.com/auth', info)
+const register = info => dispatch => axiosHelper('post', '/auth', info)
   .then(response => dispatch(pureRegister(response.headers)));
 
 export default register;

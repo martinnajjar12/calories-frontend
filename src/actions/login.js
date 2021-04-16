@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { LOGIN } from '../actionTypes/index';
+import axiosHelper from '../utils/axiosHelper';
 import showAlert from './showAlert';
 
 const pureLogin = data => ({
@@ -13,7 +13,7 @@ const pureLogin = data => ({
   },
 });
 
-const login = info => dispatch => axios.post('https://caloriesapi.herokuapp.com/auth/sign_in', info)
+const login = info => dispatch => axiosHelper('post', '/auth/sign_in', info)
   .then(response => dispatch(pureLogin(response.headers)))
   .catch(() => dispatch(showAlert({ status: 401, message: 'Invalid Email or Password' })));
 

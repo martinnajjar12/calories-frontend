@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { FETCH_TODAY_DATA } from '../actionTypes';
+import axiosHelper from '../utils/axiosHelper';
 
 const pureFetchTodayData = data => ({
   type: FETCH_TODAY_DATA,
@@ -11,7 +11,7 @@ const fetchTodayData = ({
   uid,
   client,
   expiry,
-}) => dispatch => axios.get('https://caloriesapi.herokuapp.com/api/v1/measures', {
+}) => dispatch => axiosHelper('get', '/api/v1/measures', {
   headers: {
     'access-token': accessToken,
     uid,

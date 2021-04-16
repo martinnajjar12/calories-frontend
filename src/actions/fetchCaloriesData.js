@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { FETCH_CALORIES_DATA } from '../actionTypes';
+import axiosHelper from '../utils/axiosHelper';
 
 const pureFetchCaloriesData = data => ({
   type: FETCH_CALORIES_DATA,
@@ -11,7 +11,7 @@ const fetchCaloriesData = ({
   uid,
   expiry,
   client,
-}) => dispatch => axios.get('https://caloriesapi.herokuapp.com/api/v1/calories', {
+}) => dispatch => axiosHelper('get', '/api/v1/calories', {
   headers: {
     'access-token': accessToken,
     uid,

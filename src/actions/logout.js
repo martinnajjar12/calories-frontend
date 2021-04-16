@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { LOGOUT } from '../actionTypes';
+import axiosHelper from '../utils/axiosHelper';
 import deleteRegistrationSession from './deleteRegistrationSession';
 
 const nullSessionStorage = {
@@ -15,7 +15,7 @@ const pureLogout = () => ({
   payload: nullSessionStorage,
 });
 
-const logout = (uid, accessToken, client) => dispatch => axios.delete('https://caloriesapi.herokuapp.com/auth/sign_out', {
+const logout = (uid, accessToken, client) => dispatch => axiosHelper('delete', '/auth/sign_out', {
   headers: {
     uid,
     client,
