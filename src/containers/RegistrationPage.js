@@ -4,6 +4,9 @@ import FormTitle from '../components/FormTitle';
 import RegistrationForm from '../components/RegistrationForm';
 import Header from '../components/Header';
 import register from '../actions/register';
+import validValues from '../utils/validValues';
+import showAlert from '../actions/showAlert';
+import CustomAlert from '../components/CustomAlert';
 
 const defaultState = {
   name: '',
@@ -28,7 +31,11 @@ const RegistrationPage = () => {
 
   const handleSubmit = (e, info) => {
     e.preventDefault();
-    dispatch(register(info));
+    if (validValues(state)) {
+      dispatch(register(info));
+    } else {
+      dispatch(showAlert({ status: 422, message: 'Please fill in all the fields' }));
+    }
   };
 
   return (
@@ -36,6 +43,7 @@ const RegistrationPage = () => {
       <Header title="Calories Tracker" isLogged={false} />
       <FormTitle title="Register" />
       <RegistrationForm handleChange={handleChange} handleSubmit={handleSubmit} state={state} />
+      <CustomAlert />
     </>
   );
 };
