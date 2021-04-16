@@ -1,8 +1,8 @@
 import { SHOW_ALERT } from '../actionTypes';
 
-const showAlert = data => ({
+const showAlert = ({ status, message }) => ({
   type: SHOW_ALERT,
-  payload: data.status,
+  payload: { status, message },
 });
 
 export default showAlert;

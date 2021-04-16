@@ -7,6 +7,7 @@ import commonStyles from '../utils/commonStyles';
 import FormTitle from '../components/FormTitle';
 import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
+import CustomAlert from '../components/CustomAlert';
 
 const defaultState = {
   email: '',
@@ -39,6 +40,7 @@ const LoginPage = () => {
         <Typography color="textSecondary">Don&apos;t have an account?&nbsp;</Typography>
         <Link className={commonClasses.anchorText} to="/registration"><Typography color="primary">Create Account</Typography></Link>
       </Grid>
+      <CustomAlert />
     </>
   );
 };

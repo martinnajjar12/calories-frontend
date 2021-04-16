@@ -43,13 +43,13 @@ const submitValues = ({
               measure: 'calories',
               value: caloriesValue,
             }).then(response => {
-              dispatch(showAlert(response));
+              dispatch(showAlert({ ...response, message: 'Meal is submitted successfully!' }));
             });
           }
         });
       }
     });
   }
-}).catch(err => dispatch(showAlert(err)));
+}).catch(err => dispatch(showAlert({ ...err, message: 'Something went wrong! Please try again later' })));
 
 export default submitValues;
