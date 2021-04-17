@@ -2,7 +2,7 @@
 
 exports[`MemberPageContent component should match snapshot 1`] = `
 <div
-  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiCard-root makeStyles-cardRoot-2 MuiPaper-elevation1 MuiPaper-rounded"
 >
   <button
     className="MuiButtonBase-root MuiCardActionArea-root"
@@ -22,7 +22,7 @@ exports[`MemberPageContent component should match snapshot 1`] = `
     type="button"
   >
     <div
-      className="MuiCardMedia-root makeStyles-media-3"
+      className="MuiCardMedia-root makeStyles-media-4"
       style={
         Object {
           "backgroundImage": "url(\\"fajdjf\\")",
@@ -48,7 +48,7 @@ exports[`MemberPageContent component should match snapshot 1`] = `
     />
   </button>
   <div
-    className="MuiCardActions-root makeStyles-cardActionRoot-2 MuiCardActions-spacing"
+    className="MuiCardActions-root makeStyles-cardActionRoot-3 MuiCardActions-spacing"
   >
     <div
       className="MuiFormControl-root MuiTextField-root MuiFormControl-marginDense MuiFormControl-fullWidth"
@@ -73,7 +73,7 @@ exports[`MemberPageContent component should match snapshot 1`] = `
         <input
           aria-invalid={false}
           autoFocus={false}
-          className="MuiInputBase-input MuiOutlinedInput-input makeStyles-darkText-6 MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+          className="MuiInputBase-input MuiOutlinedInput-input makeStyles-darkText-7 makeStyles-root-1 MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
           disabled={false}
           min={0}
           name="Carbohydrates"
@@ -87,10 +87,10 @@ exports[`MemberPageContent component should match snapshot 1`] = `
         />
         <fieldset
           aria-hidden={true}
-          className="PrivateNotchedOutline-root-27 MuiOutlinedInput-notchedOutline"
+          className="PrivateNotchedOutline-root-28 MuiOutlinedInput-notchedOutline"
         >
           <legend
-            className="PrivateNotchedOutline-legendLabelled-29 PrivateNotchedOutline-legendNotched-30"
+            className="PrivateNotchedOutline-legendLabelled-30 PrivateNotchedOutline-legendNotched-31"
           >
             <span>
               Carbohydrates

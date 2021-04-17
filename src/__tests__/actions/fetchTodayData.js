@@ -25,7 +25,7 @@ describe('fetchTodayData action', () => {
       response: [{ name: 'test 1', value: '13' }, { name: 'test 2', value: '23' }],
     });
 
-    const store = mockStore({ name: 'test 1', value: '13' }, { name: 'test 2', value: '23' });
+    const store = mockStore({ name: 'test 3', value: '10' });
 
     return store.dispatch(fetchTodayData(userInfo)).then(() => {
       expect(store.getActions()).toEqual([{

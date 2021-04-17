@@ -3,9 +3,12 @@ import { SHOW_ALERT } from '../../actionTypes';
 
 describe('show Alert action', () => {
   it('should return an object when show alert is called', () => {
-    expect(showAlert({ status: 'success' })).toEqual({
+    expect(showAlert({ status: 'success', message: 'test' })).toEqual({
       type: SHOW_ALERT,
-      payload: 'success',
+      payload: {
+        status: 'success',
+        message: 'test',
+      },
     });
   });
 });

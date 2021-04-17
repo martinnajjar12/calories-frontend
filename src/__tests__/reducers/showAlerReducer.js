@@ -3,7 +3,10 @@ import showAlertReducer from '../../reducers/showAlertReducer';
 
 const showAlert = {
   type: SHOW_ALERT,
-  payload: 200,
+  payload: {
+    status: 201,
+    message: 'test',
+  },
 };
 
 const showError = {
@@ -20,6 +23,7 @@ describe('showAlerReducer', () => {
     expect(showAlertReducer({}, showAlert)).toEqual({
       bool: true,
       status: 'success',
+      message: 'test',
     });
   });
 

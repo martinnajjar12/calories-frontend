@@ -15,7 +15,7 @@ exports[`LoginForm component should match snapshot 1`] = `
       Email
     </label>
     <div
-      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-darkText-3 MuiInputBase-formControl MuiInput-formControl"
+      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-darkText-3 makeStyles-root-24 MuiInputBase-formControl MuiInput-formControl"
       onClick={[Function]}
       required={true}
     >
@@ -45,7 +45,7 @@ exports[`LoginForm component should match snapshot 1`] = `
       Password
     </label>
     <div
-      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-darkText-3 MuiInputBase-formControl MuiInput-formControl"
+      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-darkText-3 makeStyles-root-24 MuiInputBase-formControl MuiInput-formControl"
       onClick={[Function]}
       required={true}
     >
