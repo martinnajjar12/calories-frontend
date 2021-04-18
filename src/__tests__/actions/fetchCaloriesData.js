@@ -7,7 +7,7 @@ import { FETCH_CALORIES_DATA } from '../../actionTypes';
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-const url = 'http://localhost:3000/api/v1/calories';
+const url = 'https://caloriesapi.herokuapp.com/api/v1/calories';
 const userInfo = {
   accessToken: 'lfjsdf32er32kl',
   client: 'fljdsf973jlk',

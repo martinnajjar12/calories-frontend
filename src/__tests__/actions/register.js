@@ -7,7 +7,7 @@ import { REGISTER } from '../../actionTypes';
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-const url = 'http://localhost:3000/auth';
+const url = 'https://caloriesapi.herokuapp.com/auth';
 const userInfo = {
   email: 'martin@microverse.org',
   password: '123456',

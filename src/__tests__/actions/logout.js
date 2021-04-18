@@ -7,7 +7,7 @@ import { DELETE_REGISTRATION_SESSION, LOGOUT } from '../../actionTypes';
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-const url = 'http://localhost:3000/auth/sign_out';
+const url = 'https://caloriesapi.herokuapp.com/auth/sign_out';
 const userInfo = {
   'access-token': 'fskl24klrw',
   'token-type': 'Bearer',

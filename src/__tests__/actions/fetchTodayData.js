@@ -7,7 +7,7 @@ import { FETCH_TODAY_DATA } from '../../actionTypes';
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-const url = 'http://localhost:3000/api/v1/measures';
+const url = 'https://caloriesapi.herokuapp.com/api/v1/measures';
 const userInfo = {
   accessToken: 'lfjsdf32er32kl',
   client: 'fljdsf973jlk',
