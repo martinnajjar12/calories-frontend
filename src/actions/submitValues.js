@@ -7,7 +7,7 @@ const submitValues = ({
   expiry,
   client,
   meal,
-}) => dispatch => axiosHelper('post', '/api/v1/measurements/create', {
+}) => dispatch => axiosHelper('post', '/api/v1/measurements/', {
   uid,
   'access-token': accessToken,
   client,
@@ -16,7 +16,7 @@ const submitValues = ({
   value: meal.Carbohydrates,
 }).then(response => {
   if (response.status === 201) {
-    axiosHelper('post', '/api/v1/measurements/create', {
+    axiosHelper('post', '/api/v1/measurements/', {
       uid,
       'access-token': accessToken,
       client,
@@ -25,7 +25,7 @@ const submitValues = ({
       value: meal.Proteins,
     }).then(response => {
       if (response.status === 201) {
-        axiosHelper('post', '/api/v1/measurements/create', {
+        axiosHelper('post', '/api/v1/measurements/', {
           uid,
           'access-token': accessToken,
           client,
@@ -35,7 +35,7 @@ const submitValues = ({
         }).then(response => {
           if (response.status === 201) {
             const caloriesValue = (meal.Fats * 9) + (meal.Carbohydrates * 4) + (meal.Proteins * 4);
-            axiosHelper('post', '/api/v1/measurements/create', {
+            axiosHelper('post', '/api/v1/measurements/', {
               uid,
               'access-token': accessToken,
               client,

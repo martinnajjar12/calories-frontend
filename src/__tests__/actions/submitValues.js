@@ -7,7 +7,7 @@ import { SHOW_ALERT } from '../../actionTypes';
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-const url = 'https://caloriesapi.herokuapp.com/api/v1/measurements/create';
+const url = 'https://caloriesapi.herokuapp.com/api/v1/measurements/';
 const userInfo = {
   accessToken: 'lfjsdf32er32kl',
   client: 'fljdsf973jlk',

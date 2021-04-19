@@ -11,7 +11,7 @@ const fetchCaloriesData = ({
   uid,
   expiry,
   client,
-}) => dispatch => axiosHelper('get', '/api/v1/calories', {
+}) => dispatch => axiosHelper('get', '/api/v1/measures/1', {
   headers: {
     'access-token': accessToken,
     uid,
