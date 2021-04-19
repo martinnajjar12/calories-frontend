@@ -4,12 +4,12 @@ import {
 } from '../actionTypes';
 
 const initialState = {
-  accessToken: sessionStorage.getItem('accessToken'),
-  expiry: sessionStorage.getItem('expiry'),
-  client: sessionStorage.getItem('client'),
-  tokenType: sessionStorage.getItem('token-type'),
-  uid: sessionStorage.getItem('uid'),
-  isLogged: !!sessionStorage.getItem('isLogged'),
+  accessToken: localStorage.getItem('accessToken'),
+  expiry: localStorage.getItem('expiry'),
+  client: localStorage.getItem('client'),
+  tokenType: localStorage.getItem('tokenType'),
+  uid: localStorage.getItem('uid'),
+  isLogged: !!localStorage.getItem('isLogged'),
 };
 
 const sessionReducer = (state = initialState, action) => {

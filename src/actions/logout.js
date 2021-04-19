@@ -1,5 +1,6 @@
 import { LOGOUT } from '../actionTypes';
 import axiosHelper from '../utils/axiosHelper';
+import saveToLocalStorage from '../utils/saveToLocalStorage';
 import deleteRegistrationSession from './deleteRegistrationSession';
 
 const nullSessionStorage = {
@@ -10,10 +11,13 @@ const nullSessionStorage = {
   tokenType: null,
 };
 
-const pureLogout = () => ({
-  type: LOGOUT,
-  payload: nullSessionStorage,
-});
+const pureLogout = () => {
+  saveToLocalStorage(nullSessionStorage, '');
+  return {
+    type: LOGOUT,
+    payload: nullSessionStorage,
+  };
+};
 
 const logout = (uid, accessToken, client) => dispatch => axiosHelper('delete', '/auth/sign_out', {
   headers: {

@@ -1,4 +1,5 @@
 import { DELETE_REGISTRATION_SESSION } from '../actionTypes';
+import saveToLocalStorage from '../utils/saveToLocalStorage';
 
 const nullRegistrationStorage = {
   accessToken: null,
@@ -8,9 +9,12 @@ const nullRegistrationStorage = {
   tokenType: null,
 };
 
-const deleteRegistrationSession = () => ({
-  type: DELETE_REGISTRATION_SESSION,
-  payload: nullRegistrationStorage,
-});
+const deleteRegistrationSession = () => {
+  saveToLocalStorage(nullRegistrationStorage, '');
+  return {
+    type: DELETE_REGISTRATION_SESSION,
+    payload: nullRegistrationStorage,
+  };
+};
 
 export default deleteRegistrationSession;
