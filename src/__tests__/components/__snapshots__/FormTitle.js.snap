@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormTitle component should match snapshot 1`] = `
+<h2
+  className="MuiTypography-root makeStyles-textSecondary-2 makeStyles-centerText-5 makeStyles-topMargin30-11 MuiTypography-h2"
+>
+  Home
+</h2>
+`;
