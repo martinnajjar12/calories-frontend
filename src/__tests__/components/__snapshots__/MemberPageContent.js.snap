@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MemberPageContent component should match snapshot 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root makeStyles-cardRoot-2 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <button
+    className="MuiButtonBase-root MuiCardActionArea-root"
+    disabled={false}
+    onBlur={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <div
+      className="MuiCardMedia-root makeStyles-media-4"
+      style={
+        Object {
+          "backgroundImage": "url(\\"fajdjf\\")",
+        }
+      }
+    />
+    <div
+      className="MuiCardContent-root"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+      >
+        Carbohydrates
+      </h2>
+      <p
+        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+      >
+        Some text
+      </p>
+    </div>
+    <span
+      className="MuiCardActionArea-focusHighlight"
+    />
+  </button>
+  <div
+    className="MuiCardActions-root makeStyles-cardActionRoot-3 MuiCardActions-spacing"
+  >
+    <div
+      className="MuiFormControl-root MuiTextField-root MuiFormControl-marginDense MuiFormControl-fullWidth"
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-marginDense MuiInputLabel-outlined MuiFormLabel-filled Mui-required Mui-required"
+        data-shrink={true}
+      >
+        Carbohydrates
+        <span
+          aria-hidden={true}
+          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+        >
+           
+          *
+        </span>
+      </label>
+      <div
+        className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+        onClick={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          autoFocus={false}
+          className="MuiInputBase-input MuiOutlinedInput-input makeStyles-darkText-7 makeStyles-root-1 MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+          disabled={false}
+          min={0}
+          name="Carbohydrates"
+          onAnimationStart={[Function]}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={true}
+          type="number"
+          value="25"
+        />
+        <fieldset
+          aria-hidden={true}
+          className="PrivateNotchedOutline-root-28 MuiOutlinedInput-notchedOutline"
+        >
+          <legend
+            className="PrivateNotchedOutline-legendLabelled-30 PrivateNotchedOutline-legendNotched-31"
+          >
+            <span>
+              Carbohydrates
+               *
+            </span>
+          </legend>
+        </fieldset>
+      </div>
+      <p
+        className="MuiFormHelperText-root MuiFormHelperText-contained MuiFormHelperText-filled Mui-required MuiFormHelperText-marginDense"
+      >
+        Should be in Gram
+      </p>
+    </div>
+  </div>
+</div>
+`;

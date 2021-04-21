@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Calories App - FrontEnd</h1>
 
-## Available Scripts
+> User facing program to post and fetch data from and API (You can find the backend repo [here](https://github.com/martinnajjar12/calories-backend/)). You can use this app to check how many calories have taken each day.
 
-In the project directory, you can run:
+![screenshot](./src/assets/images/screenshot.jpg)
 
-### `npm start`
+<p align="center">Screenshot</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p>Additional description about the project and its features.</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- ReactJS
+- Redux
+- Redux thunk
+- Material UI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tested With
 
-### `npm run build`
+- Jest
+- redux-mock-store
+- moxios
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- User can login/logout/register by a token based authentication
+- User can't access the app without loging in
+- User can submit the amounts of Carbohydrates, Proteins and Fats
+- The database will calculate how much calories has the user eaten based on the amounts of the ingredients above
+- User will have a percentage progress to show him how much calories he can have today in order to lose weight
+- User is presented with a page that renders a chart to see the amounts of calories he had in the last seven days
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Email and password to check the app:**
+Email: martin@martinnajjar.tech
+password: 123456
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Live Demo
 
-If you aren’t satisfied with the build tool and configuration choices, you ca `eject` at any time. This command will remove the single build dependency from your project.
+[Live Demo Link](https://howmuchcalories.netlify.app)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To get a local copy up and running follow these simple example steps.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- NodeJS
+- Code Editor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Setup
 
-### Analyzing the Bundle Size
+Open up a terminal (after installing Git) and run the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+  git clone https://github.com/martinnajjar12/calories-frontend
+```
 
-### Making a Progressive Web App
+and hit Enter.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**OR**
 
-### Advanced Configuration
+Download a zip version of the project from the above button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Install
 
-### Deployment
+To install the required dependencies run this command in your terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+  npm install
+```
 
-### `npm run build` fails to minify
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In order to open it in your browser, you need to dispatch the following command:
+
+```
+  npm start
+```
+
+**Note:** You will not be able to interact with the server because of CORS (Cross-Origin Resource Sharing) restriction.
+
+### Run tests
+
+To test the application please run this command:
+
+```
+  npm test
+```
+
+## Authors
+
+👤 **Martin Najjar**
+
+- GitHub: [Martin Najjar](https://github.com/martinnajjar12)
+- Twitter: [Martin Najjar](https://twitter.com/martin_najjar)
+- LinkedIn: [Martin Najjar](https://linkedin.com/in/martinnajjar12)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/martinnajjar12/calories-frontend/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- App idea by me 😉
+- [Calculator.net](https://www.calculator.net/calorie-calculator.html?ctype=metric)
+- [Healthline](https://www.healthline.com/health/what-is-basal-metabolic-rate#How-many-calories-you-need-everyday-)
+- [My Body My Chicken](https://mybodymykitchen.com/calculate-your-macronutrients-protein-fats-carbs/)
+- [Designed by Gregoire Vella](https://www.behance.net/gregoirevella)
+- [Mockup psd created by rawpixel.com - www.freepik.com](https://www.freepik.com/psd/mockup)
+
+## 📝 License
+
+This project is [MIT](https://github.com/martinnajjar12/calories-frontend/blob/development/LICENSE) licensed.
